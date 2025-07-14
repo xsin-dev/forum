@@ -1,0 +1,658 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+
+//  ******* HERO *******
+.hero {
+    overflow: hidden;
+    position: relative;
+    border-bottom-left-radius: 72px;
+    border-bottom-right-radius: 72px;
+    background: linear-gradient(160.49deg, #141414 -12.27%, #025140 73.8%, #141414 109.81%);
+
+    &__content {
+        z-index: 99;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        // border-top: 1px solid white;
+    }
+
+    &__date {
+        margin-bottom: 8px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: linear-gradient(84.75deg, #205D4C 4.21%, #44C39F 185.88%);
+        @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+        &-icon-img {
+            width: 24px;
+            height: 24px;
+        }
+
+        &-text {
+            font-family: Poppins;
+            letter-spacing: -4%;
+            text-align: center;
+            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, capitalize)
+        }
+    }
+
+    &__location {
+        margin-bottom: 48px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: linear-gradient(84.75deg, #205D4C 4.21%, #44C39F 185.88%);
+        @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+        &-icon-img {
+            width: 24px;
+            height: 24px;
+        }
+
+        &-text {
+            font-family: Poppins;
+            letter-spacing: -4%;
+            text-align: center;
+            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, unset)
+        }
+    }
+
+    &__text {
+        width: 994px;
+        margin-bottom: 32px;
+        font-family: Poltawski Nowy;
+        letter-spacing: -2%;
+        text-align: center;
+        @include headingFonts($text-color, 56px, 500, 112.00000000000001%, capitalize)
+    }
+
+    &__sub-text {
+        margin-bottom: 64px;
+        width: 906px;
+        font-family: SF Pro Display;
+        letter-spacing: 0%;
+        text-align: center;
+        @include headingFonts($text-color, 20px, 400, 156%, unset);
+    }
+
+    &__register-btn {
+        cursor: pointer;
+        font-family: Poppins;
+        text-align: center;
+        letter-spacing: -4%;
+        z-index: 99999;
+
+        @include headingFonts($black-text, 22px, 500, 112.00000000000001%, capitalize);
+        @include Button($text-color, 1px solid $text-color, 16px, 24px 98px);
+
+        &:hover {
+          color: $regester-bg-color;
+        }
+    }
+}
+
+
+
+// ***** HERO BACKGROUND FONTS *****
+.hero__bg {
+    &-color1 {
+        position: absolute;
+        width: 762px;
+        height: 695px;
+        top: 0;
+        right: 0;
+        opacity: 1;
+
+    }
+
+    &-font1 {
+        position: absolute;
+        width: 1687.9999387132377px;
+        height: 948.99996554435px;
+        top: 0;
+        right: 0;
+        opacity: 1;
+
+    }
+
+    &-color2 {
+        position: absolute;
+        width: 762px;
+        height: 695px;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+
+    }
+
+    &-font2 {
+        position: absolute;
+        width: 1687.9999387132377px;
+        height: 948.99996554435px;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+    }
+}
+
+
+
+
+// ******* PARTNERS *******
+.partners {
+    padding: 72px 0;
+    border-radius: 72px;
+    background-color: $text-color;
+
+    // *** CONTENT ***
+    &__content {
+        margin-bottom: 72px;
+        border-radius: 32px;
+        padding: 32px;
+        box-shadow: 0px 0px 20px 0px #0129700F;
+        @include flexLayout(flex, space-between, center, 32px, row nowrap);
+
+        &-info {
+            width: 50%;
+
+            &-title {
+                font-family: Poltawski Nowy;
+                letter-spacing: -2%;
+                width: 560px;
+                margin-bottom: 32px;
+                @include headingFonts($black-text, 40px, 500, 112.00000000000001%, capitalize);
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                margin-bottom: 40px;
+                @include headingFonts($p-text, 16px, 400, 156%, unset);
+
+            }
+        }
+
+        &-cards {
+            @include flexLayout(flex, space-between, center, 0, row nowrap)
+        }
+
+        &-card {
+            min-height: 200px;
+            background-color: $partners-card-bg;
+            border-radius: 28px;
+            padding: 20px;
+
+            &-title {
+                font-family: Poltawski Nowy;
+                letter-spacing: -2%;
+                @include headingFonts($black-text, 40px, 500, 112.00000000000001%, unset)
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                margin-top: 32px;
+                @include headingFonts($lang-btn, 14px 500, 132%, unset);
+            }
+
+        }
+
+
+        &-image {
+            width: 50%;
+        }
+
+        &-img {
+            width: 592px;
+            // height: 527px;
+            border-radius: 24px;
+            width: 100%;
+        }
+    }
+
+    // *** participants ***
+    &__participants {
+        margin-bottom: 72px;
+
+        &-header {
+            margin-bottom: 48px;
+            @include flexLayout(flex, space-between, center, 0, row nowrap)
+        }
+
+        &-title {
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            @include headingFonts($black-text, 56px, 500, 112.00000000000001%, capitalize);
+        }
+
+        &-btn {
+            font-family: Poppins;
+            letter-spacing: -4%;
+            text-align: center;
+            @include headingFonts($text-color, 18px, 500, 112.00000000000001%, unset);
+            @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 20px 35px);
+
+            &:hover {
+                background-color: $lang-btn;
+            }
+        }
+
+        &-cards {
+            @include gridLayout(grid, 4, 12px);
+
+        }
+
+        &-card {
+            background-color: $partners-card-bg;
+            padding: 24px;
+            border-radius: 32px;
+            height: 280px;
+
+            &-image {
+                background-color: $text-color;
+                height: 72px;
+                width: 72px;
+                border-radius: 14px;
+                margin-bottom: 32px;
+                @include flexLayout(flex, center, center, 0, row)
+            }
+
+            &-img {
+                width: 52px;
+                height: 52px;
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -4%;
+                @include headingFonts($p-text, 18px, 500, 132%, unset)
+            }
+        }
+    }
+
+
+    // *** SPEAKERS ***
+    &__speakers {
+        &-header {
+            margin-bottom: 48px;
+            @include flexLayout(flex, space-between, center, 0, row nowrap);
+
+
+            &-title {
+                font-family: Poltawski Nowy;
+                letter-spacing: -2%;
+                @include headingFonts($black-text, 56px, 500, 112.00000000000001%, capitalize);
+            }
+
+            &-btn {
+                font-family: Poppins;
+                letter-spacing: -4%;
+                text-align: center;
+                @include headingFonts($text-color, 18px, 500, 112.00000000000001%, unset);
+                @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 20px 35px);
+
+                &:hover {
+                    background-color: $lang-btn;
+                }
+            }
+        }
+
+        &-cards {
+            @include gridLayout(grid, 4, 40px 16px);
+        }
+
+        &-card {
+            &-image {
+                position: relative;
+                border-radius: 24px;
+
+                &-text {
+                    position: absolute;
+                    bottom: 16px;
+                    left: 16px;
+                    padding: 12px 16px;
+                    background-color: $partners-card-bg;
+                    border-radius: 10px;
+
+                    font-family: Poppins;
+                    letter-spacing: -2%;
+                    @include headingFonts($regester-bg-color, 16px, 500, 156%, capitalize)
+                }
+            }
+
+            &-img {
+                border-radius: 24px;
+            }
+
+            &-title {
+                font-family: Poppins;
+                letter-spacing: -4%;
+                margin: 24px 0;
+                @include headingFonts($black-text, 24px, 600, 128%, capitalize);
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                @include headingFonts($p-text, 14px, 400, 156%, capitalize);
+            }
+        }
+    }
+}
+
+
+
+// ******* ADVANTAGES ******* 
+.advantages {
+    border-radius: 72px;
+    background: linear-gradient(161.7deg, #141414 -13.43%, #025140 64.7%, #141414 97.39%);
+
+    // CONTENT
+    &__content {
+        padding: 72px 0;
+
+        &-title {
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            text-align: center;
+            margin-bottom: 48px;
+            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize)
+        }
+
+        &-boxes {
+            @include gridLayout(grid, 3, 0)
+        }
+
+        &-box {
+            background-color: $partners-card-bg;
+            padding: 24px;
+            border: 2px dashed black;
+            border-radius: 40px;
+            @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
+
+
+            &-icon {
+                width: 72px;
+                height: 72px;
+                background-color: $lang-btn;
+                border-radius: 16px;
+                @include flexLayout(flex, center, center, 0, row nowrap)
+            }
+
+            &-title {
+                font-family: Poppins;
+                letter-spacing: -4%;
+                @include headingFonts($p-text, 32px, 500, 128%, capitalize)
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                @include headingFonts($p-text, 15px, 400, 156%, unset)
+            }
+        }
+    }
+
+    // PROGRAM
+    &__program {
+        &-title {
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            margin-bottom: 24px;
+            // text-align: center;
+            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize)
+        }
+
+        &-text {
+            font-family: Poppins;
+            letter-spacing: -2%;
+            // text-align: center;
+            margin-bottom: 56px;
+            @include headingFonts($text-color, 18px, 400, 132%, unset)
+        }
+
+
+        &-cards {
+            @include gridLayout(grid, 2, 16px)
+        }
+
+        &-card {
+            position: relative;
+            padding: 32px 150px 32px 32px;
+            border-radius: 32px;
+            border: 1px solid #FFFFFF3D;
+            @include flexLayout(flex, flex-start, flex-start, 28px, column nowrap);
+
+            &-title {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                @include headingFonts($text-color, 28px, 500, 108%, none)
+            }
+
+            &-text {
+                font-family: Poppins;
+                @include headingFonts($text-color, 15px, 400, 132%, none)
+            }
+
+
+            &-number {
+                font-family: Poppins;
+                right: 32px;
+                color: white;
+                position: absolute;
+                letter-spacing: -2%;
+                @include headingFonts($regester-bg-color, 32px, 500, 108%, none);
+            }
+        }
+
+        &-btn {
+            margin: 80px auto;
+            font-family: Poppins;
+            letter-spacing: -4%;
+            text-align: center;
+            @include headingFonts($text-color, 22px, 500, 112.00000000000001%, capitalize);
+            @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 25px 100px);
+
+            &:hover{
+                background-color: $text-color;
+                color: $regester-bg-color;
+            }
+        }
+
+        &-info {
+            @include flexLayout(flex, center, center, 0, column nowrap);
+
+        }
+    }
+
+    // PARTICIPANTS
+    &__participants {
+        overflow: hidden;
+
+        &-title {
+            padding: 0 96px;
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize);
+        }
+
+        &-carusel {
+            margin: 100px 0;
+            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+        }
+
+        &-box {
+            width: 240px;
+            height: 128px;
+            border-radius: 24px;
+            background-color: $text-color;
+        }
+    }
+}
+
+
+// ******* ORGANIZERS *******
+.organizers {
+    border-radius: 72px;
+    background-color: $text-color;
+    padding: 72px 0;
+
+    &__content {
+        margin-bottom: 50px;
+        @include flexLayout(flex, flex-start, flex-start, 0, column nowrap);
+
+        &-title {
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            margin-bottom: 56px;
+            @include headingFonts($black-text, 48px, 500, 112.00000000000001%, capitalize);
+        }
+
+        &-cards {
+            width: 100%;
+            margin-bottom: 80px;
+            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+        }
+
+        &-card {
+            width: 100%;
+            height: 300px;
+            padding: 40px 50px;
+            border-radius: 32px;
+            background-color: $partners-card-bg;
+            @include flexLayout(flex, flex-start, center, 0, column nowrap);
+
+            &-img {
+                width: 64px;
+                height: 64px;
+            }
+
+            &-icon {
+                padding: 16px;
+                background-color: $text-color;
+                border-radius: 16px;
+                margin-bottom: 32px;
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -4%;
+                text-align: center;
+                @include headingFonts($p-text, 20px, 500, 132%, none)
+            }
+        }
+
+        &-boxes {
+            width: 100%;
+            margin: 0 auto;
+            @include flexLayout(flex, center, center, 0, column nowrap);
+
+            &-title {
+                font-family: Poltawski Nowy;
+                letter-spacing: -2%;
+                margin-bottom: 40px;
+                @include headingFonts($p-text, 32px, 500, 112.00000000000001%, none)
+            }
+
+            &-double {
+                margin-bottom: 54px;
+                @include flexLayout(flex, space-between, center, 12px, row nowrap);
+            }
+
+            &-wrapper {
+                margin-bottom: 54px;
+                @include gridLayout(grid, 4, 12px);
+            }
+
+            &-swiper {
+                @include flexLayout(flex, space-between, center, 12px, row nowrap)
+            }
+        }
+
+        &-box {
+            width: 240px;
+            height: 128px;
+            border-radius: 24px;
+            background-color: $box-bg-color;
+        }
+    }
+
+    &__passes {
+        padding: 100px 0;
+        @include flexLayout(flex, center, center, 0, column nowrap);
+
+        &-title {
+            font-family: Poltawski Nowy;
+            letter-spacing: -2%;
+            margin-bottom: 32px;
+            @include headingFonts($black-text, 48px, 500, 112.00000000000001%, capitalize)
+        }
+
+        &-buttons {
+            margin-bottom: 56px;
+            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+        }
+
+        &-btn {
+            font-family: Poppins;
+            letter-spacing: -4%;
+
+            @include headingFonts($text-color, 22px, 500, 156%, capitalize);
+            @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 24px 32px);
+
+            &:first-child {
+                color: $p-text;
+                background-color: transparent;
+                border: 1px solid $passes-btn;
+            }
+
+            &:hover {
+                background-color: $lang-btn;
+                color: $text-color;
+            }
+        }
+
+
+        &-content {
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0px 0px 20px 0px #0129700F;
+            @include flexLayout(flex, space-between, flex-start, 40px, row nowrap);
+
+            &-info {
+                // width: 50%;
+                @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
+
+                &-title {
+                    font-family: Poltawski Nowy;
+                    letter-spacing: -2%;
+                    @include headingFonts($black-text, 32px, 500, 112.00000000000001%, none)
+                }
+
+                &-text {
+                    font-family: Poppins;
+                    letter-spacing: -2%;
+
+                    @include headingFonts($p-text, 16px, 400, 156%, none)
+                }
+
+                &-btn {
+                    width: 49%;
+                    font-family: Poppins;
+                    letter-spacing: -4%;
+                    text-align: center;
+
+                    @include headingFonts($text-color, 18px, 500, 112.00000000000001%, capitalize);
+                    @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 22px 0);
+
+                    &:hover{
+                        background-color: $lang-btn;
+                    }
+                }
+            }
+        }
+    }
+}

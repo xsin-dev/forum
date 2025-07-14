@@ -1,0 +1,19 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.site__logo {
+    @include flexLayout(flex, space-between, center, 11px, row nowrap);
+
+    &-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    &-text {
+        width: 300px;
+        font-family: Poppins;
+        letter-spacing: -2%;
+
+        @include headingFonts($text-color, 16px, 500, 128%, capitalize)
+    }
+}

@@ -1,0 +1,131 @@
+// @use '../../base/mixins' as *;
+// @use '../../base/variables' as *;
+
+// .hero {
+//     overflow: hidden;
+//     position: relative;
+//     border-bottom-left-radius: 72px;
+//     border-bottom-right-radius: 72px;
+//     background: linear-gradient(160.49deg, #141414 -12.27%, #025140 73.8%, #141414 109.81%);
+
+//     &__content {
+//         z-index: 99;
+//         height: 100vh;
+//         display: flex;
+//         align-items: center;
+//         flex-direction: column;
+//         justify-content: center;
+//         // border-top: 1px solid white;
+//     }
+
+//     &__date {
+//         margin-bottom: 8px;
+//         padding: 12px 16px;
+//         border-radius: 12px;
+//         background: linear-gradient(84.75deg, #205D4C 4.21%, #44C39F 185.88%);
+//         @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+//         &-icon-img {
+//             width: 24px;
+//             height: 24px;
+//         }
+
+//         &-text {
+//             font-family: Poppins;
+//             letter-spacing: -4%;
+//             text-align: center;
+//             @include headingFonts($text-color, 20px, 500, 112.00000000000001%, capitalize)
+//         }
+//     }
+
+//     &__location {
+//         margin-bottom: 48px;
+//         padding: 12px 16px;
+//         border-radius: 12px;
+//         background: linear-gradient(84.75deg, #205D4C 4.21%, #44C39F 185.88%);
+//         @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+//         &-icon-img {
+//             width: 24px;
+//             height: 24px;
+//         }
+
+//         &-text {
+//             font-family: Poppins;
+//             letter-spacing: -4%;
+//             text-align: center;
+//             @include headingFonts($text-color, 20px, 500, 112.00000000000001%, unset)
+//         }
+//     }
+
+//     &__text {
+//         width: 994px;
+//         margin-bottom: 32px;
+//         font-family: Poltawski Nowy;
+//         letter-spacing: -2%;
+//         text-align: center;
+//         @include headingFonts($text-color, 56px, 500, 112.00000000000001%, capitalize)
+//     }
+
+//     &__sub-text {
+//         margin-bottom: 64px;
+//         width: 906px;
+//         font-family: SF Pro Display;
+//         letter-spacing: 0%;
+//         text-align: center;
+//         @include headingFonts($text-color, 20px, 400, 156%, unset);
+//     }
+
+//     &__register-btn {
+//         cursor: pointer;
+//         text-align: center;
+//         letter-spacing: -4%;
+//         font-family: Poppins;
+
+//         @include headingFonts($black-text, 22px, 500, 112.00000000000001%, capitalize);
+//         @include Button($text-color, 1px solid $text-color, 16px, 24px 98px);
+//     }
+// }
+
+// .hero__bg {
+//     // position: absolute;
+
+//     &-color1 {
+//         position: absolute;
+//         width: 762px;
+//         height: 695px;
+//         top: 0;
+//         right: 0;
+//         opacity: 1;
+
+//     }
+
+//     &-font1 {
+//         position: absolute;
+//         width: 1687.9999387132377px;
+//         height: 948.99996554435px;
+//         top: 0;
+//         right: 0;
+//         opacity: 1;
+
+//     }
+
+//     &-color2 {
+//         position: absolute;
+//         width: 762px;
+//         height: 695px;
+//         bottom: 0;
+//         left: 0;
+//         opacity: 1;
+
+//     }
+
+//     &-font2 {
+//         position: absolute;
+//         width: 1687.9999387132377px;
+//         height: 948.99996554435px;
+//         bottom: 0;
+//         left: 0;
+//         opacity: 1;
+//     }
+// }

@@ -1,0 +1,71 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.footer {
+    padding: 0 96px;
+    background: linear-gradient(0deg, #0C4132, #0C4132),
+        linear-gradient(245.62deg, #025140 35.45%, #141414 205.86%);
+    border-top-left-radius: 72px;
+    border-top-right-radius: 72px;
+
+    &__navbar {
+        padding: 45px 0;
+        border-bottom: 1px solid $text-color;
+        @include flexLayout(flex, space-between, center, 0, row nowrap);
+
+    }
+
+    &__phone {
+        @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+        &-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        &-number {
+            font-family: Poppins;
+            letter-spacing: -2%;
+
+            @include headingFonts($text-color, 18px, 500, 108%, none);
+
+            &-green {
+                color: $regester-bg-color;
+            }
+        }
+    }
+
+    &__info {
+        // margin-top: 32px;
+        padding: 32px 0 50px 0;
+        @include flexLayout(flex, space-between, center, 0, row nowrap);
+
+        &-address {
+            @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+            &-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+
+                @include headingFonts($text-color, 18px, 500, 108%, none);
+
+                &-green {
+                    color: $regester-bg-color;
+                }
+            }
+        }
+
+        &-year {
+            font-family: Poppins;
+            letter-spacing: 0%;
+            opacity: .7;
+            @include headingFonts($text-color, 16px, 400, 128%, none);
+
+        }
+    }
+}

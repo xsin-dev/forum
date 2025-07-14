@@ -1,0 +1,14 @@
+@use '../base/variables' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  scroll-behavior: smooth;
+  background-color: $black-text;
+}
+
+a {
+  text-decoration: none;
+}
