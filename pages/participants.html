@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Participants</title>
+</head>
+
+<body>
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar">
+        <div class="sidebar__content">
+            <div class="sidebar__header">
+                <div class="sidebar__header-wrapper">
+                    <a href="#">
+                        <div class="site__logo">
+                            <img src="./assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
+                                height="48">
+                            <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
+                        </div>
+                    </a>
+
+                    <div class="sidebar__header-right-content">
+                        <div class="sidebar__lang-swicher">
+                            <button class="sidebar__lang-btn" id="sidebatActiveLang">UZ</button>
+                            <div id="sidebarLangDropDown" class="sidebar__lang-drop-down" style="display: none;">
+                                <button class="sidebar__lang-btn" id="sidebarSecondLang">EN</button>
+                            </div>
+                        </div>
+                        <div class="sidebar__hide" onclick="hideSidebar()">
+                            <img class="sidebar__hide-icon" src="./assets/images/svg/hide-icon.svg" alt="X icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__main">
+                <ul class="sidebar__nav">
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./index.html">Main</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/participants.html">Program</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/participants.html">Participants</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/media.html">Media</a>
+                    </li>
+                </ul>
+                <div class="sidebar__register">
+                    <a class="sidebar__register-btn" href="#">Register</a>
+                </div>
+            </div>
+            <div class="sidebar__footer">
+                <div class="footer__phone">
+                    <img src="./assets/images/svg/phone.svg" alt="phone" height="20" width="20"
+                        class="footer__phone-icon">
+                    <div class="footer__phone-number">
+                        <p class="footer__phone-number-title">Phone number:</p>
+                        <p class="footer__phone-number-text">+998(94)094–88–88</p>
+                    </div>
+                </div>
+                <div class="footer__address">
+                    <img src="./assets/images/svg/address.svg" alt="icon" class="footer__address-icon" width="25"
+                        height="25">
+                    <div class="footer__address-info">
+                        <p class="footer__address-info-title">Address:</p>
+                        <p class="footer__address-info-text">OOO "World Pharma Forum" Tashkent, 95A Amir Temur
+                            Avenue</p>
+                    </div>
+                </div>
+                <img class="sidebar__footer-font" src="./assets/images/png/sidebar-font.png" alt="font">
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <a href="./participants.html">
+                        <div class="site__logo">
+                            <img src="../assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
+                                height="48">
+                            <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
+                        </div>
+                    </a>
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="../index.html" class="nav__item-link">Program</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="../pages/participants.html" class="nav__item-link">Participants</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="../pages/media.html" class="nav__item-link">Media</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <div class="header__lang-swicher">
+                            <button class="header__lang-btn" id="activeLang">UZ</button>
+                            <div id="langDropDown" class="header__lang-drop-down" style="display: none;">
+                                <button class="header__lang-btn" id="secondLang">EN</button>
+                            </div>
+
+                        </div>
+                        <button class="header__register scroll-btn">Register</button>
+                        <div class="header__menu">
+                            <div class="header__menu-button" onclick="showSidebar()">
+                                <img class="header__menu-button-icon" src="./assets/images/svg/menu-icon.svg"
+                                    alt="menu icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="hero__bg">
+            <img src="../assets/images/jpg/hero-bg.png" alt="" class="hero__bg-image">
+            <img src="../assets/images/png/hero-bg-top.png" alt="font" class="hero__bg-color1">
+            <img src="../assets/images/png/hero-font-top.png" alt="font" class="hero__bg-font1">
+            <img src="../assets/images/png/hero-bg-bottom.png" alt="font" class="hero__bg-color2">
+            <img src="../assets/images/png/hero-font-bottom.png" alt="font" class="hero__bg-font2">
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="participants-hero">
+                    <h2 class="participants-hero__title">Participants</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARTICIPANTS ===== -->
+    <section class="participants">
+        <div class="container">
+            <div class="wrapper">
+                <div class="participants__buttons">
+                    <button class="participants__button active" data-tab="participantsTab1">Participants</button>
+                    <button class="participants__button" data-tab="participantsTab2">Invited companies</button>
+                    <button class="participants__button" data-tab="participantsTab3">Speakers and guests</button>
+                </div>
+                <div class="participants-content active" id="participantsTab1">
+                    <div class="participants-content__participant">
+                        <div class="participants-content__cards">
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="participants-content__cards">
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                            <div class="participants-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <div class="participants-card__image">
+                                    <img src="../assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                                </div>
+                                <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                    the Republic
+                                    of Uzbekistan</p>
+
+                                <div class="participants-card__background">
+                                    <img src="../assets/images/png/participants-card.png" alt=" bgFont"
+                                        class="participants-card__background-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== COMPANIES ===== -->
+                <div class="participants-content" id="participantsTab2">
+                    <div class="participants-content__companies">
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                        <div class="participants-content__companies-cards">
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="200">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="220">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="240">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                            <div class="participants-content__companies-card" data-aos="fade-left" data-aos-delay="200"
+                                data-aos-duration="260">
+                                <img class="participants-content__companies-card-img"
+                                    src="../assets/images/jpg/grandpharm.png" alt="company">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== SPEAKER ===== -->
+                <div class="participants-content" id="participantsTab3">
+                    <div class="participants-content__speakers">
+                        <div class="participants-content__speakers-cards">
+                            <div class="participants-content__speakers-card">
+                                <img class="participants-content__speakers-card-img"
+                                    src="../assets/images/png/speaker2.png" alt="speaker">
+                                <div class="participants-content__speakers-card-user">
+                                    <h3 class="participants-content__speakers-card-user-name">Asilbek Khudayarov</h3>
+                                    <p class="participants-content__speakers-card-user-position">Manager of interaction
+                                        with
+                                        public authorities and market
+                                        access for medicines</p>
+                                    <p class="participants-content__speakers-card-user-info">Association of
+                                        Representative
+                                        Offices of Foreign Pharmaceutical Companies and Manufacturers in the Republic of
+                                        Uzbekistan</p>
+                                </div>
+                            </div>
+                            <div class="participants-content__speakers-card">
+                                <img class="participants-content__speakers-card-img"
+                                    src="../assets/images/png/speaker2.png" alt="speaker">
+                                <div class="participants-content__speakers-card-user">
+                                    <h3 class="participants-content__speakers-card-user-name">Asilbek Khudayarov</h3>
+                                    <p class="participants-content__speakers-card-user-position">market
+                                        access for medicines</p>
+                                    <p class="participants-content__speakers-card-user-info"> in the Republic of
+                                        Uzbekistan
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="participants-content__speakers-card">
+                                <img class="participants-content__speakers-card-img"
+                                    src="../assets/images/png/speaker2.png" alt="speaker">
+                                <div class="participants-content__speakers-card-user">
+                                    <h3 class="participants-content__speakers-card-user-name">Asilbek Khudayarov</h3>
+                                    <p class="participants-content__speakers-card-user-position"> public authorities and
+                                        market
+                                        access for medicines</p>
+                                    <p class="participants-content__speakers-card-user-info">Association of
+                                        Representative
+                                        Offices of Foreign Pharmaceutical Companies and Manufacturers in the Republic of
+                                        Uzbekistan</p>
+                                </div>
+                            </div>
+                            <div class="participants-content__speakers-card">
+                                <img class="participants-content__speakers-card-img"
+                                    src="../assets/images/png/speaker2.png" alt="speaker">
+                                <div class="participants-content__speakers-card-user">
+                                    <h3 class="participants-content__speakers-card-user-name">Asilbek Khudayarov</h3>
+                                    <p class="participants-content__speakers-card-user-position">Manager of interaction
+                                        with
+                                        public authorities and market
+                                        access for medicines</p>
+                                    <p class="participants-content__speakers-card-user-info"> Offices of Foreign
+                                        Pharmaceutical Companies and Manufacturers in the Republic of Uzbekistan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== REGISTER ===== -->
+                <div class="register" id="registerForm">
+                    <h2 class="register-title">Cost and conditions of participation</h2>
+                    <div class="register-buttons">
+                        <button data-tab="tab1" class="register-btn active">Participation</button>
+                        <button data-tab="tab2" class="register-btn">Become a
+                            partner</button>
+                    </div>
+                    <div class="register-content active" id="tab1" data-aos="fade-up" data-aos-delay="200"
+                        data-aos-duration="150" data-aos-anchor-placement="top-bottom">
+                        <div class="register-content-first">
+                            <h3 class="register-content-first-title">Sing In</h3>
+                            <div class="register-content-first-register">
+                                <button class="register-content-first-btn">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register-content" id="tab2" data-aos="fade-up" data-aos-delay="200"
+                        data-aos-duration="150" data-aos-anchor-placement="top-bottom">
+                        <div class="register-content-second">
+                            <div class="register-content-info">
+                                <h3 class="register-content-info-title">Submit your online request and our
+                                    team
+                                    will reach out with all the details you need.</h3>
+                                <p class="register-content-info-text">Looking to elevate your brand and expand
+                                    your business network? Choosing one of our exclusive sponsorship packages is the
+                                    ultimate way to showcase market leadership, connect with key industry players, and
+                                    attract high-value partners. Position your company at the forefront of the
+                                    pharmaceutical industry!</p>
+                                <form class="form">
+                                    <input class="form__input form__input-first" type="text"
+                                        placeholder="First and last name">
+                                    <input class="form__input" type="email" placeholder="E-mail">
+                                    <input class="form__input" type="text" placeholder="Phone number">
+                                    <input class="form__input" type="text" placeholder="Company">
+                                    <input class="form__input" type="text" placeholder="Position">
+                                </form>
+                                <button class="register-content-info-btn">Register</button>
+                            </div>
+                            <div class="register-content-image">
+                                <img src="../assets/images/jpg/partners.jpg" alt="image" class="register-content-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__navbar">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <a href="#">
+                        <div class="site__logo">
+                            <img src="../assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
+                                height="48">
+                            <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
+                        </div>
+                    </a>
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="#" class="nav__item-link">Program</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__item-link">Participants</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__item-link">Media</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footer__phone">
+                        <img src="../assets/images/svg/phone.svg" alt="phone" height="20" width="20"
+                            class="footer__phone-icon">
+                        <div class="footer__phone-number">
+                            <p class="footer__phone-number-title">Phone number:</p>
+                            <p class="footer__phone-number-text">+998(94)094–88–88</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__info">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <p class="footer__info-year">© 2025 International Pharmceutical Forum of Uzbekistan</p>
+                    <div class="footer__address">
+                        <img src="../assets/images/svg/address.svg" alt="icon" class="footer__address-icon" width="25"
+                            height="25">
+                        <div class="footer__address-info">
+                            <p class="footer__address-info-title">Address:</p>
+                            <p class="footer__address-info-text">OOO "World Pharma Forum" Tashkent, 95A Amir Temur
+                                Avenue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

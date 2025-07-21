@@ -1,0 +1,171 @@
+@use '../../sass/base/mixins' as *;
+@use '../../sass/base/variables' as *;
+
+
+.media {
+    background-color: $text-color;
+    padding: 72px 0;
+
+    &__buttons {
+        border-bottom: 1px solid $passes-btn;
+        padding: 32px 0;
+        @include flexLayout(flex, center, center, 12px, row nowrap)
+    }
+
+    &__button {
+        font-family: Poppins;
+        letter-spacing: -4%;
+        @include headingFonts($black-text, 22px, 500, 156%, capitalize);
+        @include Button($text-color, 1px solid $passes-btn, 14px, 12px 32px);
+
+        &.active {
+            color: $text-color;
+            background-color: $regester-bg-color;
+            border: 1px solid $passes-btn;
+        }
+    }
+
+    // CONTENT
+    &-content {
+        &-tab {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &__buttons {
+            margin: 32px 0 56px 0;
+            @include flexLayout(flex, center, center, 12px, row nowrap)
+        }
+
+        &__button {
+            font-family: Poppins;
+            letter-spacing: -4%;
+            @include headingFonts($black-text, 22px, 500, 156%, capitalize);
+            @include Button($text-color, 1px solid $passes-btn, 14px, 12px 32px);
+
+            &.active {
+                color: $text-color;
+                background-color: $regester-bg-color;
+                border: 1px solid $passes-btn;
+            }
+        }
+
+        &__wrapper {
+            display: none;
+
+            &.active {
+                display: block
+            }
+        }
+
+        // PHOTOS GALLERY
+        &__photos {
+            @include gridLayout(grid, 3, 12px);
+
+            &-box {
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                min-height: 240px;
+                border-radius: 16px;
+
+                &-img {
+                    position: absolute;
+                    object-fit: cover;
+                    border-radius: 16px;
+                }
+
+                &-event {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 2;
+                    opacity: 0;
+                    transform: translate(-50%, -50%);
+                    transition: opacity 150ms ease-in 100ms; // 100ms kechikish
+                    @include flexLayout(flex, center, center, 5px, row nowrap);
+
+                    &-img {
+                        width: 48px;
+                        height: 48px;
+                    }
+
+                    &-text {
+                        font-family: Poppins;
+                        @include headingFonts($text-color, 16px, 500, 132%, capitalize)
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 16px;
+                    background-color: rgba(0, 0, 0, 0.0);
+                    transition: background-color 150ms linear;
+                    z-index: 1;
+                }
+
+                &:hover {
+                    .media-content__photos-box-event {
+                        opacity: 1;
+                    }
+
+                    &::after {
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+        }
+
+        // VIDEOS GALLERY
+        &__videos {
+            @include gridLayout(grid, 3, 12px);
+
+            &-box {
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                min-height: 240px;
+                border-radius: 16px;
+
+                &-img {
+                    position: absolute;
+                    object-fit: cover;
+                    border-radius: 16px;
+                }
+
+                &-event {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 2;
+                    opacity: 0;
+                    padding: 20px;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: $regester-bg-color;
+                    transition: opacity .2s ease-in 0ms; // 100ms kechikish
+                    @include flexLayout(flex, center, center, 5px, row nowrap);
+
+                    &-img {
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+
+                &:hover {
+                    .media-content__videos-box-event {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

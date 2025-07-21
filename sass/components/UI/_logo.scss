@@ -2,14 +2,18 @@
 @use '../../base/variables' as *;
 
 .site__logo {
+    // z-index: 9999999999;
+    cursor: pointer;
     @include flexLayout(flex, space-between, center, 11px, row nowrap);
 
     &-img {
+        z-index: 99999999;
         width: 48px;
         height: 48px;
     }
 
     &-text {
+        z-index: 99999999;
         width: 300px;
         font-family: Poppins;
         letter-spacing: -2%;

@@ -4,13 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Document</title>
+    <title>Forum</title>
 </head>
 
 <body>
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar">
+        <div class="sidebar__content">
+            <div class="sidebar__header">
+                <div class="sidebar__header-wrapper">
+                    <a href="#">
+                        <div class="site__logo">
+                            <img src="./assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
+                                height="48">
+                            <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
+                        </div>
+                    </a>
+
+                    <div class="sidebar__header-right-content">
+                        <div class="sidebar__lang-swicher">
+                            <button class="sidebar__lang-btn" id="sidebatActiveLang">UZ</button>
+                            <div id="sidebarLangDropDown" class="sidebar__lang-drop-down" style="display: none;">
+                                <button class="sidebar__lang-btn" id="sidebarSecondLang">EN</button>
+                            </div>
+                        </div>
+                        <div class="sidebar__hide" onclick="hideSidebar()">
+                            <img class="sidebar__hide-icon" src="./assets/images/svg/hide-icon.svg" alt="X icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__main">
+                <ul class="sidebar__nav">
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./index.html">Main</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/participants.html">Program</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/participants.html">Participants</a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__nav-item-link" href="./pages/media.html">Media</a>
+                    </li>
+                </ul>
+                <div class="sidebar__register">
+                    <a class="sidebar__register-btn" href="#">Register</a>
+                </div>
+            </div>
+            <div class="sidebar__footer">
+                <div class="footer__phone">
+                    <img src="./assets/images/svg/phone.svg" alt="phone" height="20" width="20"
+                        class="footer__phone-icon">
+                    <div class="footer__phone-number">
+                        <p class="footer__phone-number-title">Phone number:</p>
+                        <p class="footer__phone-number-text">+998(94)094–88–88</p>
+                    </div>
+                </div>
+                <div class="footer__address">
+                    <img src="./assets/images/svg/address.svg" alt="icon" class="footer__address-icon" width="25"
+                        height="25">
+                    <div class="footer__address-info">
+                        <p class="footer__address-info-title">Address:</p>
+                        <p class="footer__address-info-text">OOO "World Pharma Forum" Tashkent, 95A Amir Temur
+                            Avenue</p>
+                    </div>
+                </div>
+                <img class="sidebar__footer-font" src="./assets/images/png/sidebar-font.png" alt="font">
+            </div>
+        </div>
+    </div>
+    <!-- ===== HERO ===== -->
     <section class="hero">
+        <header class="header">
+            <div class="container">
+                <div class="header-wrapper">
+                    <a href="./index.html">
+                        <div class="site__logo">
+                            <img src="./assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
+                                height="48">
+                            <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
+                        </div>
+                    </a>
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="./index.html" class="nav__item-link">Program</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="./pages/participants.html" class="nav__item-link">Participants</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="./pages/media.html" class="nav__item-link">Media</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <div class="header__lang-swicher">
+                            <button class="header__lang-btn" id="activeLang">UZ</button>
+                            <div id="langDropDown" class="header__lang-drop-down" style="display: none;">
+                                <button class="header__lang-btn" id="secondLang">EN</button>
+                            </div>
+                        </div>
+                        <button class="header__register scroll-btn">Register</button>
+                        <div class="header__menu">
+                            <div class="header__menu-button" onclick="showSidebar()">
+                                <img class="header__menu-button-icon" src="./assets/images/svg/menu-icon.svg"
+                                    alt="menu icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <div class="hero__bg">
+            <img src="./assets/images/jpg/hero-bg.png" alt="" class="hero__bg-image">
             <img src="./assets/images/png/hero-bg-top.png" alt="font" class="hero__bg-color1">
             <img src="./assets/images/png/hero-font-top.png" alt="font" class="hero__bg-font1">
             <img src="./assets/images/png/hero-bg-bottom.png" alt="font" class="hero__bg-color2">
@@ -18,7 +130,768 @@
         </div>
         <div class="container">
             <div class="wrapper">
-                <header class="header">
+                <div class="hero__content">
+                    <div class="hero__date">
+                        <img src="./assets/images/svg/clock.svg" class="hero__date-icon-img" alt="clock icon" width="24"
+                            height="24">
+                        <p class="hero__date-text">June 3-4, 2025</p>
+                    </div>
+                    <div class="hero__location">
+                        <img src="./assets/images/svg/location.svg" class="hero__location-icon-img" alt="location icon"
+                            width="24" height="24">
+                        <p class="hero__location-text">Hilton Tashkent city</p>
+                    </div>
+                    <h2 class="hero__text">The IV International Pharmaceutical Forum of Uzbekistan</h2>
+                    <p class="hero__sub-text">The flagship event of the year for pharmaceutical industry professionals
+                        in
+                        Central Asia, bringing together top leaders, experts, and market participants to discuss
+                        innovative
+                        solutions and drive industry development.</p>
+                    <button class="hero__register-btn scroll-btn">Register</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARTNERS ===== -->
+    <section class="partners">
+        <div class="container">
+            <div class="wrapper">
+                <div class="partners__content" data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                    data-aos-anchor-placement="top-bottom">
+                    <div class="partners__content-info">
+                        <h2 class="partners__content-info-title">International Pharmaceutical Forum of Uzbekistan</h2>
+                        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__content-info-text">The IV
+                            International Pharmaceutical Forum of Uzbekistan
+                            upholds its
+                            reputation as the leading international platform for key decision-makers in the
+                            pharmaceutical industry.
+                            This prestigious event will bring together top executives from major manufacturers and
+                            distributors,
+                            government and regulatory authorities, technology licensors, legal experts, and industry
+                            consultants,
+                            creating an unparalleled environment for strategic discussions, networking, and business
+                            growth.</p>
+
+                        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__content-cards">
+                            <div class="partners__content-card">
+                                <h2 class="partners__content-card-title">2 days</h2>
+                                <p class="partners__content-card-text">of High-Impact Insights & Exclusive Networking
+                                </p>
+                            </div>
+                            <div class="partners__content-card">
+                                <h2 class="partners__content-card-title">10+</h2>
+                                <p class="partners__content-card-text">Exclusive Practical Sessions and High-Impact
+                                    Panel
+                                    Discussions led by Industry Pioneers</p>
+                            </div>
+                            <div class="partners__content-card">
+                                <h2 class="partners__content-card-title">250+</h2>
+                                <p class="partners__content-card-text">Participants</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partners__content-image">
+                        <img src="./assets/images/jpg/partners.jpg" alt="partners" class="partners__content-img">
+                    </div>
+                </div>
+
+                <div class="partners__participants">
+                    <div class="partners__participants-header">
+                        <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__participants-title">Participants
+                        </h2>
+                        <button data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__participants-btn">All
+                            participants</button>
+                    </div>
+                    <div class="partners__participants-cards">
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partners__participants-cards">
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="participants-card">
+                            <div class="participants-card__image">
+                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="participants-card__img">
+                            </div>
+                            <p class="participants-card__text">Ministry of Investment, Industry and Trade of
+                                the Republic
+                                of Uzbekistan</p>
+
+                            <div class="participants-card__background">
+                                <img src="./assets/images/png/participants-card.png" alt=" bgFont"
+                                    class="participants-card__background-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partners__speakers">
+                    <div class="partners__speakers-header">
+                        <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__speakers-header-title">Main speakers
+                        </h2>
+                        <button data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                            data-aos-anchor-placement="top-bottom" class="partners__speakers-header-btn">All
+                            speakers</button>
+                    </div>
+
+                    <div class="partners__speakers-cards">
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="210"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="220"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="230"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                    </div>
+                    <div class="partners__speakers-cards">
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="210"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="220"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="230"
+                            class="partners__speakers-card">
+                            <div class="partners__speakers-card-image">
+                                <img src="./assets/images/png/speaker.png" alt="" speakers
+                                    class="partners__speakers-card-img">
+                                <p class="partners__speakers-card-image-text">Minister</p>
+                            </div>
+                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
+                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ADVANTAGES ===== -->
+    <section class="advantages">
+        <div class="advantages__content">
+            <div class="container">
+                <div class="wrapper">
+                    <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                        data-aos-anchor-placement="top-bottom" class="advantages__content-title">Advanteges</h2>
+                    <div class="advantages__content-boxes">
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and regional
+                                market trends, breakthrough technologies, sustainable development strategies, and new
+                                opportunities for international collaboration.</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and regional
+                                market trends, breakthrough technologies, sustainable development strategies, and new
+                                opportunities for international collaboration.</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and regional
+                                market trends, breakthrough technologies, sustainable development strategies, and new
+                                opportunities for international collaboration.</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and regional
+                                market trends, breakthrough technologies, sustainable development strategies, and new
+                                opportunities for international collaboration.</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and regional
+                                market trends, breakthrough technologies, sustainable development strategies, and new
+                                opportunities for international collaboration.</p>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__content-box">
+                            <div class="advantages__content-box-icon">
+                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
+                            </div>
+                            <h3 class="advantages__content-box-title">Topics</h3>
+                            <p class="advantages__content-box-text">The most innovative and high-impact themes
+                                shaping
+                                the future of pharmaceuticals. Agenda features exclusive sessions on global and
+                                regional
+                                market trends, breakthrough technologies, sustainable development strategies, and
+                                new
+                                opportunities for international collaboration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PROGRAM -->
+        <div class="advantages__program">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="advantages__program-info">
+                        <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__program-title">Program</h2>
+                        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="advantages__program-text">The final version of
+                            the forum program will be available
+                            soon</p>
+                        <div class="advantages__program-cards">
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="advantages__program-card">
+                                <p class="advantages__program-card-number">02</p>
+                                <h3 class="advantages__program-card-title">Regulation and development of the dietary
+                                    supplements market:
+                                    overcoming
+                                    gray imports and stimulating local production</h3>
+                                <ul class="advantages__program-card-texts">
+                                    <li class="advantages__program-card-text">• Problems of gray imports and their
+                                        impact on the market.</li>
+                                    <li class="advantages__program-card-text">• Standardization and certification of
+                                        dietary supplements: increasing consumer confidence.</li>
+                                    <li class="advantages__program-card-text">• Development of local production using
+                                        local raw materials.</li>
+                                    <li class="advantages__program-card-text">• Reducing the tax burden for legal
+                                        producers and importers.</li>
+                                    <li class="advantages__program-card-text">• Educational campaigns to raise public
+                                        awareness about dietary supplements.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="advantages__program-btn scroll-btn">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PARTICIPANTS -->
+        <div class="advantages__participants">
+            <div class="container">
+                <h2 class="advantages__participants-title">Featured Industry participants</h2>
+            </div>
+            <div class="advantages__participants-slider">
+                <div class="advantages__participants-slider-track">
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <!-- takror -->
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                    <div class="advantages__participants-box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ORGANIZERS ===== -->
+    <section class="organizers">
+        <div class="container">
+            <div class="wrapper">
+                <div class="organizers__content">
+                    <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                        data-aos-anchor-placement="top-bottom" class="organizers__content-title">Forum Organizers</h2>
+                    <div class="organizers__content-cards">
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="200"
+                            class="organizers__content-card">
+                            <div class="organizers__content-card-icon">
+                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img"
+                                    width="64" height="64">
+                            </div>
+                            <p class="organizers__content-card-text">The Ministry of Health of the Republic of
+                                Uzbekistan</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="220"
+                            class="organizers__content-card">
+                            <div class="organizers__content-card-icon">
+                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img"
+                                    width="64" height="64">
+                            </div>
+                            <p class="organizers__content-card-text">The Pharmaceutical Industry Development Agency
+                                under the Ministry of Health of the Republic of Uzbekistan.</p>
+                        </div>
+                        <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="240"
+                            class="organizers__content-card">
+                            <div class="organizers__content-card-icon">
+                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img"
+                                    width="64" height="64">
+                            </div>
+                            <p class="organizers__content-card-text">Association of Representative Offices of Foreign
+                                Pharmaceutical Companies and Manufacturers in the Republic of Uzbekistan</p>
+                        </div>
+                    </div>
+                    <h2 data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                        data-aos-anchor-placement="top-bottom" class="organizers__content-title">Forum Partners</h2>
+                    <div class="organizers__content-boxes">
+                        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="organizers__content-boxes-title">General
+                            partner:</p>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                        <p class="organizers__content-boxes-title">Main partner:</p>
+                        <div class="organizers__content-boxes-double">
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                        </div>
+                        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="organizers__content-boxes-title">Partner:</p>
+                        <div class="organizers__content-boxes-wrapper">
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                        </div>
+                        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="organizers__content-boxes-title">Legal
+                            Partner:</p>
+                        <div class="organizers__content-boxes-double">
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                        </div>
+                        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                            data-aos-anchor-placement="top-bottom" class="organizers__content-boxes-title">Press & Media
+                            Partner:</p>
+                        <div class="organizers__content-boxes-swiper">
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="250"
+                                data-aos-anchor-placement="top-bottom" class="organizers__content-box"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===== REGISTER ===== -->
+                <div class="register" id="registerForm">
+                    <h2 class="register-title">Delegate Passes & Paartnership Opportunities</h2>
+                    <div class="register-buttons">
+                        <button data-tab="tab1" class="register-btn active">Participation</button>
+                        <button data-tab="tab2" class="register-btn">Become a
+                            partner</button>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                        data-aos-anchor-placement="top-bottom" class="register-content active" id="tab1">
+                        <div class="register-content-first">
+                            <h3 class="register-content-first-title">Sing In</h3>
+                            <div class="register-content-first-register">
+                                <button class="register-content-first-btn">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="150"
+                        data-aos-anchor-placement="top-bottom" class="register-content" id="tab2">
+                        <div class="register-content-second">
+                            <div class="register-content-info">
+                                <h3 class="register-content-info-title">Submit your online request and our
+                                    team
+                                    will reach out with all the details you need.</h3>
+                                <p class="register-content-info-text">Looking to elevate your brand and expand
+                                    your business network? Choosing one of our exclusive sponsorship packages is the
+                                    ultimate way to showcase market leadership, connect with key industry players, and
+                                    attract high-value partners. Position your company at the forefront of the
+                                    pharmaceutical industry!</p>
+                                <form class="form">
+                                    <input class="form__input form__input-first" type="text"
+                                        placeholder="First and last name">
+                                    <input class="form__input" type="email" placeholder="E-mail">
+                                    <input class="form__input" type="text" placeholder="Phone number">
+                                    <input class="form__input" type="text" placeholder="Company">
+                                    <input class="form__input" type="text" placeholder="Position">
+                                </form>
+                                <button class="register-content-info-btn">Register</button>
+                            </div>
+                            <div class="register-content-image">
+                                <img src="./assets/images/jpg/partners.jpg" alt="image" class="register-content-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__navbar">
+            <div class="footer__container">
+                <div class="footer__content">
                     <a href="#">
                         <div class="site__logo">
                             <img src="./assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48"
@@ -39,496 +912,41 @@
                             </li>
                         </ul>
                     </nav>
-
-                    <div class="header__buttons">
-                        <button class="header__lang-btn">UZ</button>
-                        <button class="header__register">Register</button>
-                    </div>
-                </header>
-
-                <div class="hero__content">
-                    <div class="hero__date">
-                        <img src="./assets/images/svg/clock.svg" class="hero__date-icon-img" alt="clock icon" width="24"
-                            height="24">
-                        <p class="hero__date-text">June 3-4, 2025</p>
-                    </div>
-                    <div class="hero__location">
-                        <img src="./assets/images/svg/location.svg" class="hero__location-icon-img" alt="location icon"
-                            width="24" height="24">
-                        <p class="hero__location-text">Hilton Tashkent city</p>
-                    </div>
-
-                    <h2 class="hero__text">The IV International Pharmaceutical Forum of Uzbekistan</h2>
-
-                    <p class="hero__sub-text">The flagship event of the year for pharmaceutical industry professionals
-                        in
-                        Central Asia, bringing together top leaders, experts, and market participants to discuss
-                        innovative
-                        solutions and drive industry development.</p>
-                    <button class="hero__register-btn">Register</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PARTNERS ===== -->
-    <section class="partners">
-        <div class="container">
-            <div class="wrapper">
-                <div class="partners__content">
-                    <div class="partners__content-info">
-                        <h2 class="partners__content-info-title">International Pharmaceutical Forum of Uzbekistan</h2>
-                        <p class="partners__content-info-text">The IV International Pharmaceutical Forum of Uzbekistan
-                            upholds its
-                            reputation as the leading international platform for key decision-makers in the
-                            pharmaceutical industry.
-                            This prestigious event will bring together top executives from major manufacturers and
-                            distributors,
-                            government and regulatory authorities, technology licensors, legal experts, and industry
-                            consultants,
-                            creating an unparalleled environment for strategic discussions, networking, and business
-                            growth.</p>
-            
-                        <div class="partners__content-cards">
-                            <div class="partners__content-card">
-                                <h2 class="partners__content-card-title">2 days</h2>
-                                <p class="partners__content-card-text">of High-Impact Insights & Exclusive Networking</p>
-                            </div>
-                            <div class="partners__content-card">
-                                <h2 class="partners__content-card-title">10+</h2>
-                                <p class="partners__content-card-text">Exclusive Practical Sessions and High-Impact Panel
-                                    Discussions led by Industry Pioneers</p>
-                            </div>
-                            <div class="partners__content-card">
-                                <h2 class="partners__content-card-title">250+</h2>
-                                <p class="partners__content-card-text">Participants</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="partners__content-image">
-                        <img src="./assets/images/jpg/partners.jpg" alt="partners" class="partners__content-img">
-                    </div>
-                </div>
-            
-                <div class="partners__participants">
-                    <div class="partners__participants-header">
-                        <h2 class="partners__participants-title">Participants</h2>
-                        <button class="partners__participants-btn">All participants</button>
-                    </div>
-                    <div class="partners__participants-cards">
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">Ministry of Investment, Industry and Trade of the Republic
-                                of Uzbekistan</p>
-
-                            <!-- <div class="partners__participants-card-font">
-                                <img src="" alt="">
-                            </div> -->
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">Ministry of Health of the Republic of Uzbekistan </p>
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">Agency for the Development of the Pharmaceutical industry
-                                under the Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">Agency for Intellectual Property of the Republic of
-                                Uzbekistan</p>
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">State Customs Committee</p>
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">State Tax Committee</p>
-                        </div>
-                        <div class="partners__participants-card">
-                            <div class="partners__participants-card-image">
-                                <img src="./assets/images/svg/gerb.svg" alt="gerb" class="partners__participants-card-img">
-                            </div>
-                            <p class="partners__participants-card-text">Competition promotion and consumer protection committee of
-                                the Republic of Uzbekistan</p>
+                    <div class="footer__phone">
+                        <img src="./assets/images/svg/phone.svg" alt="phone" height="20" width="20"
+                            class="footer__phone-icon">
+                        <div class="footer__phone-number">
+                            <p class="footer__phone-number-title">Phone number:</p>
+                            <p class="footer__phone-number-text">+998(94)094–88–88</p>
                         </div>
                     </div>
                 </div>
-            
-                <div class="partners__speakers">
-                    <div class="partners__speakers-header">
-                        <h2 class="partners__speakers-header-title">Main speakers</h2>
-                        <button class="partners__speakers-header-btn">All speakers</button>
-                    </div>
-            
-                    <div class="partners__speakers-cards">
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="partners__speakers-card">
-                            <div class="partners__speakers-card-image">
-                                <img src="./assets/images/png/speaker.png" alt="" speakers class="partners__speakers-card-img">
-                                <p class="partners__speakers-card-image-text">Minister</p>
-                            </div>
-                            <h3 class="partners__speakers-card-title">Asilbek Khudayarov</h3>
-                            <p class="partners__speakers-card-text">Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ADVANTAGES ===== -->
-    <section class="advantages">
-        <div class="advantages__content">
-            <div class="container">
-                <div class="wrapper">
-                    <h2 class="advantages__content-title">Advanteges</h2>
-                    <div class="advantages__content-boxes">
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                        <div class="advantages__content-box">
-                            <div class="advantages__content-box-icon">
-                                <img src="./assets/images/svg/advantages-icon.svg" alt="icon">
-                            </div>
-                            <h3 class="advantages__content-box-title">Topics</h3>
-                            <p class="advantages__content-box-text">The most innovative and high-impact themes shaping the future of pharmaceuticals. Agenda features exclusive sessions on global and regional market trends, breakthrough technologies, sustainable development strategies, and new opportunities for international collaboration.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="advantages__program">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="advantages__program-info">
-                        <h2 class="advantages__program-title">Program</h2>
-                        <p class="advantages__program-text">The final version of the forum program will be available soon</p>
-                        <div class="advantages__program-cards">
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                            <div class="advantages__program-card">
-                                <p class="advantages__program-card-number">02</p>
-                                <h3 class="advantages__program-card-title">Regulation and development of the dietary supplements market:
-                                    overcoming
-                                    gray imports and stimulating local production</h3>
-                                <p class="advantages__program-card-text">• Tools for collecting and analyzing data on drug consumption. •
-                                    Forecasting the demand for medicines and preventing shortages. • Using analytics to optimize supply
-                                    chains. •
-                                    Assessment of the competitive landscape of the pharmaceutical market. • Application of AI and machine
-                                    learning
-                                    in analytics.</p>
-                            </div>
-                        </div>
-                        <button class="advantages__program-btn">Register</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="advantages__participants">
-            <h2 class="advantages__participants-title">Featured Industry participants</h2>
-            <div class="advantages__participants-carusel">
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-                <div class="advantages__participants-box"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ORGANIZERS ===== -->
-     <section class="organizers">
-        <div class="container">
-            <div class="wrapper">
-                <div class="organizers__content">
-                    <h2 class="organizers__content-title">Forum Organizers</h2>
-                    <div class="organizers__content-cards">
-                        <div class="organizers__content-card">
-                            <div class="organizers__content-card-icon">
-                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img" width="64" height="64">
-                            </div>
-                            <p class="organizers__content-card-text">The Ministry of Health of the Republic of Uzbekistan</p>
-                        </div>
-                        <div class="organizers__content-card">
-                            <div class="organizers__content-card-icon">
-                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img" width="64" height="64">
-                            </div>
-                            <p class="organizers__content-card-text">The Pharmaceutical Industry Development Agency under the Ministry of Health of the Republic of Uzbekistan.</p>
-                        </div>
-                        <div class="organizers__content-card">
-                            <div class="organizers__content-card-icon">
-                                <img src="./assets/images/svg/gerb.svg" alt="icon" class="organizers__content-card-img" width="64" height="64">
-                            </div>
-                            <p class="organizers__content-card-text">Association of Representative Offices of Foreign Pharmaceutical Companies and Manufacturers in the Republic of Uzbekistan</p>
-                        </div>
-                    </div>
-                    <h2 class="organizers__content-title">Forum Partners</h2>
-                    <div class="organizers__content-boxes">
-                        <p class="organizers__content-boxes-title">General partner:</p>
-                        <div class="organizers__content-box"></div>
-                        <p class="organizers__content-boxes-title">Main partner:</p>
-                        <div class="organizers__content-boxes-double">
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                        </div>
-                        <p class="organizers__content-boxes-title">Partner:</p>
-                        <div class="organizers__content-boxes-wrapper">
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                        </div>
-                        <p class="organizers__content-boxes-title">Legal Partner:</p>
-                        <div class="organizers__content-boxes-double">
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                        </div>
-                        <p class="organizers__content-boxes-title">Press & Media Partner:</p>
-                        <div class="organizers__content-boxes-swiper">
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                            <div class="organizers__content-box"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="organizers__passes">
-                    <h2 class="organizers__passes-title">Delegate Passes & Paartnership Opportunities</h2>
-                    <div class="organizers__passes-buttons">
-                        <button class="organizers__passes-btn">Participation</button>
-                        <button class="organizers__passes-btn">Become a partner</button>
-                    </div>
-                    <div class="organizers__passes-content">
-                        <div class="organizers__passes-content-info">
-                            <h3 class="organizers__passes-content-info-title">Submit your online request and our team will reach out with all the details you need.</h3>
-                            <p class="organizers__passes-content-info-text">Looking to elevate your brand and expand your business network? Choosing one of our exclusive sponsorship packages is the ultimate way to showcase market leadership, connect with key industry players, and attract high-value partners. Position your company at the forefront of the pharmaceutical industry!</p>
-                            <form class="form">
-                                <input class="form__input form__input-first" type="text" placeholder="First and last name">
-                                <input class="form__input" type="email" placeholder="E-mail">
-                                <input class="form__input" type="text" placeholder="Phone number">
-                                <input class="form__input" type="text" placeholder="Company">
-                                <input class="form__input" type="text" placeholder="Position">
-                            </form>
-                            <button class="organizers__passes-content-info-btn">Register</button>
-                        </div>
-                        <img src="./assets/images/jpg/partners.jpg" alt="image" class="organizers__passes-content-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-     </section>
-
-
-     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer__navbar">
-            <a href="#">
-                <div class="site__logo">
-                    <img src="./assets/images/svg/logo.svg" alt="logo" class="site__logo-img" width="48" height="48">
-                    <p class="site__logo-text">The IV International Pharmaceutical Forum of Uzbekistan</p>
-                </div>
-            </a>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#" class="nav__item-link">Program</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__item-link">Participants</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__item-link">Media</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="footer__phone">
-                <img src="./assets/images/svg/phone.svg" alt="phone" height="20" width="20" class="footer__phone-icon">
-                <p class="footer__phone-number"><span class="footer__phone-number-green">Phone number:</span> +998 (94)
-                    094–88–88</p>
             </div>
         </div>
         <div class="footer__info">
-            <p class="footer__info-year">© 2025 International Pharmceutical Forum of Uzbekistan</p>
-            <div class="footer__info-address">
-                <img src="./assets/images/svg/address.svg" alt="icon" class="footer__info-address-icon" width="25" height="25">
-                <p class="footer__info-address-text"><span class="footer__info-address-text-green">Address:</span> OOO "World Pharma Forum" Tashkent, 95A Amir Temur Avenue</p>
+            <div class="footer__container">
+                <div class="footer__content">
+                    <p class="footer__info-year">© 2025 International Pharmceutical Forum of Uzbekistan</p>
+                    <div class="footer__address">
+                        <img src="./assets/images/svg/address.svg" alt="icon" class="footer__address-icon" width="25"
+                            height="25">
+                        <div class="footer__address-info">
+                            <p class="footer__address-info-title">Address:</p>
+                            <p class="footer__address-info-text">OOO "World Pharma Forum" Tashkent, 95A Amir Temur
+                                Avenue</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

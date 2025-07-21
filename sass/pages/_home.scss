@@ -1,9 +1,13 @@
 @use '../base/mixins' as *;
 @use '../base/variables' as *;
 
+body.sidebar-open {
+    overflow: hidden;
+}
 
 //  ******* HERO *******
 .hero {
+    z-index: 999;
     overflow: hidden;
     position: relative;
     border-bottom-left-radius: 72px;
@@ -11,13 +15,11 @@
     background: linear-gradient(160.49deg, #141414 -12.27%, #025140 73.8%, #141414 109.81%);
 
     &__content {
-        z-index: 99;
         height: 100vh;
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        // border-top: 1px solid white;
     }
 
     &__date {
@@ -66,7 +68,12 @@
         font-family: Poltawski Nowy;
         letter-spacing: -2%;
         text-align: center;
-        @include headingFonts($text-color, 56px, 500, 112.00000000000001%, capitalize)
+
+        @include headingFonts($text-color, 56px, 500, 112.00000000000001%, capitalize);
+
+        @include defaultMediaQuery(1135px) {
+            font-size: 48px;
+        }
     }
 
     &__sub-text {
@@ -83,13 +90,13 @@
         font-family: Poppins;
         text-align: center;
         letter-spacing: -4%;
-        z-index: 99999;
+        z-index: 9;
 
         @include headingFonts($black-text, 22px, 500, 112.00000000000001%, capitalize);
-        @include Button($text-color, 1px solid $text-color, 16px, 24px 98px);
+        @include Button($text-color, 1px solid $text-color, 16px, 24px 96px);
 
         &:hover {
-          color: $regester-bg-color;
+            color: $regester-bg-color;
         }
     }
 }
@@ -98,6 +105,14 @@
 
 // ***** HERO BACKGROUND FONTS *****
 .hero__bg {
+    &-image {
+        position: absolute;
+        opacity: 5%;
+        object-fit: cover;
+        object-position: center 63%;
+        top: 0;
+    }
+
     &-color1 {
         position: absolute;
         width: 762px;
@@ -149,27 +164,27 @@
 
     // *** CONTENT ***
     &__content {
-        margin-bottom: 72px;
+        // margin-bottom: 72px;
         border-radius: 32px;
         padding: 32px;
         box-shadow: 0px 0px 20px 0px #0129700F;
         @include flexLayout(flex, space-between, center, 32px, row nowrap);
 
         &-info {
-            width: 50%;
+            @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
+            width: 49%;
 
             &-title {
+                // z-index: 999;
                 font-family: Poltawski Nowy;
                 letter-spacing: -2%;
                 width: 560px;
-                margin-bottom: 32px;
                 @include headingFonts($black-text, 40px, 500, 112.00000000000001%, capitalize);
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
-                margin-bottom: 40px;
                 @include headingFonts($p-text, 16px, 400, 156%, unset);
 
             }
@@ -180,10 +195,12 @@
         }
 
         &-card {
-            min-height: 200px;
+            max-height: 240px;
+            min-height: 240px;
             background-color: $partners-card-bg;
             border-radius: 28px;
             padding: 20px;
+            width: 33.4%;
 
             &-title {
                 font-family: Poltawski Nowy;
@@ -202,20 +219,17 @@
 
 
         &-image {
-            width: 50%;
+            width: 49%;
         }
 
         &-img {
-            width: 592px;
-            // height: 527px;
             border-radius: 24px;
-            width: 100%;
         }
     }
 
     // *** participants ***
     &__participants {
-        margin-bottom: 72px;
+        padding: 72px 0;
 
         &-header {
             margin-bottom: 48px;
@@ -233,7 +247,7 @@
             letter-spacing: -4%;
             text-align: center;
             @include headingFonts($text-color, 18px, 500, 112.00000000000001%, unset);
-            @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 20px 35px);
+            @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 12px 32px);
 
             &:hover {
                 background-color: $lang-btn;
@@ -241,6 +255,7 @@
         }
 
         &-cards {
+            margin-bottom: 12px;
             @include gridLayout(grid, 4, 12px);
 
         }
@@ -292,7 +307,7 @@
                 letter-spacing: -4%;
                 text-align: center;
                 @include headingFonts($text-color, 18px, 500, 112.00000000000001%, unset);
-                @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 20px 35px);
+                @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 12px 32px);
 
                 &:hover {
                     background-color: $lang-btn;
@@ -301,6 +316,7 @@
         }
 
         &-cards {
+            margin-bottom: 40px;
             @include gridLayout(grid, 4, 40px 16px);
         }
 
@@ -402,14 +418,12 @@
             font-family: Poltawski Nowy;
             letter-spacing: -2%;
             margin-bottom: 24px;
-            // text-align: center;
             @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize)
         }
 
         &-text {
             font-family: Poppins;
             letter-spacing: -2%;
-            // text-align: center;
             margin-bottom: 56px;
             @include headingFonts($text-color, 18px, 400, 132%, unset)
         }
@@ -454,9 +468,9 @@
             letter-spacing: -4%;
             text-align: center;
             @include headingFonts($text-color, 22px, 500, 112.00000000000001%, capitalize);
-            @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 25px 100px);
+            @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 24px 96px);
 
-            &:hover{
+            &:hover {
                 background-color: $text-color;
                 color: $regester-bg-color;
             }
@@ -473,23 +487,42 @@
         overflow: hidden;
 
         &-title {
-            padding: 0 96px;
             font-family: Poltawski Nowy;
             letter-spacing: -2%;
             @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize);
         }
 
-        &-carusel {
+        &-slider {
+            overflow: hidden;
+            white-space: nowrap;
             margin: 100px 0;
-            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+
+            &-track {
+                display: inline-block;
+                animation: scroll 10s linear infinite;
+                // @include flexLayout(flex, space-between, center, 12px, row nowrap)
+            }
+
         }
 
         &-box {
+            display: inline-block;
             width: 240px;
             height: 128px;
             border-radius: 24px;
+            margin-right: 12px;
             background-color: $text-color;
         }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
     }
 }
 
@@ -554,16 +587,17 @@
                 font-family: Poltawski Nowy;
                 letter-spacing: -2%;
                 margin-bottom: 40px;
+                margin-top: 54px;
                 @include headingFonts($p-text, 32px, 500, 112.00000000000001%, none)
             }
 
             &-double {
-                margin-bottom: 54px;
+                // margin-bottom: 54px;
                 @include flexLayout(flex, space-between, center, 12px, row nowrap);
             }
 
             &-wrapper {
-                margin-bottom: 54px;
+                // margin-bottom: 54px;
                 @include gridLayout(grid, 4, 12px);
             }
 
@@ -580,79 +614,4 @@
         }
     }
 
-    &__passes {
-        padding: 100px 0;
-        @include flexLayout(flex, center, center, 0, column nowrap);
-
-        &-title {
-            font-family: Poltawski Nowy;
-            letter-spacing: -2%;
-            margin-bottom: 32px;
-            @include headingFonts($black-text, 48px, 500, 112.00000000000001%, capitalize)
-        }
-
-        &-buttons {
-            margin-bottom: 56px;
-            @include flexLayout(flex, space-between, center, 12px, row nowrap)
-        }
-
-        &-btn {
-            font-family: Poppins;
-            letter-spacing: -4%;
-
-            @include headingFonts($text-color, 22px, 500, 156%, capitalize);
-            @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 24px 32px);
-
-            &:first-child {
-                color: $p-text;
-                background-color: transparent;
-                border: 1px solid $passes-btn;
-            }
-
-            &:hover {
-                background-color: $lang-btn;
-                color: $text-color;
-            }
-        }
-
-
-        &-content {
-            padding: 40px;
-            border-radius: 40px;
-            box-shadow: 0px 0px 20px 0px #0129700F;
-            @include flexLayout(flex, space-between, flex-start, 40px, row nowrap);
-
-            &-info {
-                // width: 50%;
-                @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
-
-                &-title {
-                    font-family: Poltawski Nowy;
-                    letter-spacing: -2%;
-                    @include headingFonts($black-text, 32px, 500, 112.00000000000001%, none)
-                }
-
-                &-text {
-                    font-family: Poppins;
-                    letter-spacing: -2%;
-
-                    @include headingFonts($p-text, 16px, 400, 156%, none)
-                }
-
-                &-btn {
-                    width: 49%;
-                    font-family: Poppins;
-                    letter-spacing: -4%;
-                    text-align: center;
-
-                    @include headingFonts($text-color, 18px, 500, 112.00000000000001%, capitalize);
-                    @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 22px 0);
-
-                    &:hover{
-                        background-color: $lang-btn;
-                    }
-                }
-            }
-        }
-    }
 }

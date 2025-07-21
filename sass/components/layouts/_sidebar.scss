@@ -1,0 +1,167 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.sidebar {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    width: 100%;
+    transform: translateX(-100%); // Chapga yashiringan
+    transition: transform 0.4s ease-in-out; // Animatsiya
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+
+    background: linear-gradient(152.86deg, #141414 -6.78%, #025140 47.48%, #141414 90.07%);
+
+    &.active {
+        transform: translateX(0); // Ko‘rinadigan holat
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__hide {
+        border-radius: 14px;
+        padding: 12px 20px;
+        transition: background-color 250ms ease;
+        background-color: $regester-bg-color;
+        @include flexLayout(flex, center, center, 0, row nowrap);
+
+        &-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        &:hover {
+            background-color: $lang-btn;
+        }
+    }
+
+    &__header {
+        padding: 32px 24px;
+        border-bottom: 2px solid white;
+
+        &-right-content {
+            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+        }
+
+        &-wrapper {
+            width: 100%;
+            @include flexLayout(flex, space-between, center, 0, row nowrap)
+        }
+    }
+
+    &__lang-swicher {
+        position: relative;
+        display: inline-block;
+    }
+
+    &__lang-drop-down {
+        position: absolute;
+        // display: none;
+        top: 55px;
+    }
+
+    &__lang-btn {
+        font-family: Poppins;
+        letter-spacing: -2%;
+        text-align: center;
+        @include headingFonts($text-color, 22px, 500, 112.00000000000001%, uppercase);
+        @include Button($lang-btn, 1px solid $lang-btn, 14px, 12px 16px);
+
+        &:hover {
+            color: black;
+            background-color: $text-color;
+            border: 1px solid $text-color;
+        }
+    }
+
+    // MAIN
+    &__main {
+        width: 100%;
+        margin-top: 56px;
+        @include flexLayout(flex, flex-start, center, 46px, column nowrap)
+    }
+    
+    &__nav {
+        z-index: 2;
+        @include flexLayout(flex, flex-start, center, 36px, column nowrap);
+
+        &-item {
+            position: relative;
+            transition: transform 250ms ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &-link {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                text-align: center;
+                transition: color 250ms ease;
+                @include headingFonts($text-color, 24px, 400, 100%, capitalize);
+
+                &:hover {
+                    color: $regester-bg-color;
+                }
+            }
+        }
+    }
+
+    &__register {
+        z-index: 1;
+        background-color: $text-color;
+        padding: 12px 40px;
+        border-radius: 16px;
+
+        &:hover {
+            .sidebar__register-btn {
+                color: $regester-bg-color;
+            }
+        }
+
+        &-btn {
+            font-family: Poppins;
+            text-align: center;
+            letter-spacing: -4%;
+            transition: color 250ms ease;
+            @include headingFonts($black-text, 24px, 500, 112.00000000000001%, capitalize);
+        }
+    }
+
+
+    // ** FOOTER
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #141414;
+        padding: 56px;
+        border-top-left-radius: 72px;
+        border-top-right-radius: 72px;
+        // height: 350px;
+
+        @include flexLayout(flex, flex-start, flex-start, 36px, column nowrap);
+
+        &-font {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1016px;
+            height: 562px;
+            opacity: 0.8;
+
+        }
+
+    }
+
+}

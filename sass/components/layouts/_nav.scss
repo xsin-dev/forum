@@ -2,6 +2,8 @@
 @use '../../base/variables' as *;
 
 .nav {
+    z-index: 9;
+
     &__list {
         @include flexLayout(flex, space-between, center, 56px, row nowrap)
     }
@@ -11,6 +13,7 @@
         transition: transform 350ms ease;
 
         &:hover {
+            color: $regester-bg-color;
             transform: scale(1.1);
 
         }
@@ -22,8 +25,13 @@
             transition: transform 350ms ease;
             @include headingFonts($text-color, 18px, 400, 112.00000000000001%, capitalize);
 
-
+            // &:hover{
+            // color: $regester-bg-color;
+            // transition: transform 350ms ease;
+            // }
         }
+
+
 
         &::after {
             content: '';
@@ -42,5 +50,27 @@
             }
         }
 
+        // &::before{
+        //     content: '';
+        //     position: absolute;
+        //     height: 3px;
+        //     background-color: $regester-bg-color;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: -8px;
+        //     transform: scaleY(0);
+        //     transition: .3s;
+        //     transform-origin: bottom;
+        // }
+        // &:hover{
+        //     &::before{
+        //         transform: scaleY(1);
+        //     }
+        // }
+
+    }
+
+    @include defaultMediaQuery(1135px) {
+        display: none;
     }
 }

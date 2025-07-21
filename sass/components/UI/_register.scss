@@ -1,0 +1,131 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.register {
+    padding: 100px 0;
+    @include flexLayout(flex, center, center, 0, column nowrap);
+
+    &-title {
+        font-family: Poltawski Nowy;
+        letter-spacing: -2%;
+        margin-bottom: 32px;
+        @include headingFonts($black-text, 48px, 500, 112.00000000000001%, capitalize)
+    }
+
+    &-buttons {
+        margin-bottom: 56px;
+        @include flexLayout(flex, space-between, center, 12px, row nowrap)
+    }
+
+    &-btn {
+        font-family: Poppins;
+        letter-spacing: -4%;
+        // border: 2px solid $passes-btn;
+        @include headingFonts($black-text, 22px, 500, 156%, capitalize);
+        @include Button($text-color, 1px solid $passes-btn, 14px, 12px 32px);
+
+        &.active {
+            color: $text-color;
+            background-color: $regester-bg-color;
+            border: 1px solid $passes-btn;
+        }
+    }
+
+
+    &-content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &-first {
+            width: 500px;
+            border-radius: 12px;
+            @include flexLayout(flex, center, center, 0, column nowrap);
+
+            &-title {
+                font-family: Poppins;
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                letter-spacing: -2%;
+                border-top-left-radius: 32px;
+                border-top-right-radius: 32px;
+                background-color: #09be94;
+                @include headingFonts($text-color, 22px, 500, 156%, none);
+            }
+
+            &-register {
+                width: 100%;
+                height: 150px;
+                border-bottom-left-radius: 32px;
+                border-bottom-right-radius: 32px;
+                background-color: $regester-bg-color;
+                @include flexLayout(flex, center, center, 0, column nowrap);
+
+            }
+
+            &-btn {
+                @include Button(#058c6c, 1px solid #058c6c, 12px, 12px 32px);
+                @include headingFonts($text-color, 18px, 500, 156%, none);
+
+            }
+        }
+
+        &-second {
+            position: relative;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0px 0px 20px 0px #0129700F;
+            // @include flexLayout(flex, space-between, flex-start, 40px, row nowrap);
+        }
+
+        &-info {
+            width: 48%;
+            @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
+
+            &-title {
+                font-family: Poltawski Nowy;
+                letter-spacing: -2%;
+                @include headingFonts($black-text, 32px, 500, 112.00000000000001%, none)
+            }
+
+            &-text {
+                font-family: Poppins;
+                letter-spacing: -2%;
+                @include headingFonts($p-text, 16px, 400, 156%, none)
+            }
+
+            &-btn {
+                width: 48%;
+                font-family: Poppins;
+                letter-spacing: -4%;
+                text-align: center;
+
+                @include headingFonts($text-color, 18px, 500, 112.00000000000001%, capitalize);
+                @include Button($regester-bg-color, 1px solid $regester-bg-color, 14px, 22px 32px);
+
+                &:hover {
+                    background-color: $lang-btn;
+                }
+            }
+        }
+
+        &-image {
+            position: absolute;
+            width: 49%;
+            right: 0;
+            top: 0;
+            overflow: hidden;
+            height: 95%;
+        }
+
+        &-img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: 40px;
+            // height: 100%;
+        }
+    }
+}

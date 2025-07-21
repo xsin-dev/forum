@@ -1,0 +1,45 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.participants-card {
+    overflow: hidden;
+    position: relative;
+    background-color: $partners-card-bg;
+    // background-color: rebeccapurple;
+    padding: 24px;
+    border-radius: 32px;
+    height: 280px;
+    // z-index: 99;
+
+    &__image {
+        background-color: $text-color;
+        height: 72px;
+        width: 72px;
+        border-radius: 14px;
+        margin-bottom: 32px;
+        z-index: 99;
+        @include flexLayout(flex, center, center, 0, row)
+    }
+
+    &__img {
+        width: 52px;
+        height: 52px;
+    }
+
+    &__text {
+        z-index: 99;
+        font-family: Poppins;
+        letter-spacing: -4%;
+        @include headingFonts($p-text, 18px, 500, 132%, unset)
+    }
+
+    // BACKGROUND
+    &__background{
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        &-img{
+            object-fit: cover;
+        }
+    }
+}

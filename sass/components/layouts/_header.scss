@@ -2,14 +2,28 @@
 @use '../../base/variables' as *;
 
 .header {
-    // background-color: $regester-bg-color;
-    z-index: 999999;
-    padding: 32px 0px;
-    border-bottom: 1px solid #FFFF;
-    @include flexLayout(flex, space-between, center, default, row nowrap);
+    z-index: 999;
+    border-bottom: 1px solid #FFFFFF;
+
+    &-wrapper {
+        padding: 32px 0px;
+        @include flexLayout(flex, space-between, center, default, row nowrap);
+
+    }
+
+    &__lang-swicher {
+        position: relative;
+        display: inline-block;
+    }
+
+    &__lang-drop-down {
+        position: absolute;
+        // display: none;
+        top: 55px;
+    }
 
     &__buttons {
-        z-index: 9999;
+        z-index: 999;
         @include flexLayout(flex, space-between, center, 8px, row nowrap)
     }
 
@@ -20,24 +34,58 @@
         @include headingFonts($text-color, 22px, 500, 112.00000000000001%, uppercase);
         @include Button($lang-btn, 1px solid $lang-btn, 14px, 12px 16px);
 
-        &:hover{
+        &:hover {
             color: black;
             background-color: $text-color;
             border: 1px solid $text-color;
         }
     }
 
-    &__register{
+    &__register {
         font-family: Poppins;
         letter-spacing: -4%;
         text-align: center;
         @include headingFonts($text-color, 18px, 500, 112.00000000000001%, capitalize);
         @include Button($regester-bg-color, 1px solid $regester-bg-color, 16px, 12px 32px);
-    
-        &:hover{
+
+        &:hover {
             color: black;
             background-color: $text-color;
             border: 1px solid $text-color;
         }
+
+        @include defaultMediaQuery(1135px) {
+            display: none;
+        }
     }
+
+
+    &__menu {
+        display: none;
+
+
+        &-button {
+            border-radius: 14px;
+            padding: 12px 16px;
+            background-color: $regester-bg-color;
+            transition: background-color 300ms ease;
+            @include flexLayout(flex, center, center, 0, row nowrap);
+
+            &-icon {
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                background-color: $lang-btn;
+            }
+
+        }
+
+        @include defaultMediaQuery(1135px) {
+            display: block;
+        }
+    }
+
+
 }
