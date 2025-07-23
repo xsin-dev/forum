@@ -15,11 +15,27 @@
     &__content {
         padding: 45px 0;
         @include flexLayout(flex, space-between, center, 0, row nowrap);
+
+        @include md {
+            position: relative;
+        }
+
+        @include sm {
+            font-size: 13px;
+            padding: 12px;
+        }
     }
 
     &__phone {
         margin-left: 20px;
         @include flexLayout(flex, flex-start, center, 12px, row nowrap);
+
+        @include md {
+            position: absolute;
+            margin-top: 250px;
+            left: -20px;
+
+        }
 
         &-icon {
             width: 25px;
@@ -28,6 +44,11 @@
 
         &-number {
             @include flexLayout(flex, space-between, center, 5px, row wrap);
+
+            @include md {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
             &-title {
                 font-family: Poppins;
@@ -48,16 +69,32 @@
         padding: 32px 0 50px 0;
         @include flexLayout(flex, space-between, center, 0, row nowrap);
 
+        @include md {
+            margin-top: 30px;
+            // margin-bottom: ;
+        }
+
         &-year {
             font-family: Poppins;
             letter-spacing: 0%;
             opacity: .7;
             @include headingFonts($text-color, 16px, 400, 128%, none);
+
+            @include md {
+                position: absolute;
+                bottom: -30px;
+                font-size: 14px;
+            }
+
+            @include sm {
+                font-size: 13px
+            }
         }
     }
 
     &__address {
         @include flexLayout(flex, flex-start, center, 12px, row nowrap);
+
 
         &-icon {
             width: 25px;

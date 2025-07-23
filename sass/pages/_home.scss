@@ -23,6 +23,7 @@ body.sidebar-open {
     }
 
     &__date {
+        z-index: 9;
         margin-bottom: 8px;
         padding: 12px 16px;
         border-radius: 12px;
@@ -38,16 +39,25 @@ body.sidebar-open {
             font-family: Poppins;
             letter-spacing: -4%;
             text-align: center;
-            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, capitalize)
+            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, capitalize);
+
+            @include md {
+                font-size: 16px;
+            }
         }
     }
 
     &__location {
+        z-index: 2;
         margin-bottom: 48px;
         padding: 12px 16px;
         border-radius: 12px;
         background: linear-gradient(84.75deg, #205D4C 4.21%, #44C39F 185.88%);
         @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+        @include sm {
+            margin-bottom: 32px;
+        }
 
         &-icon-img {
             width: 24px;
@@ -58,31 +68,63 @@ body.sidebar-open {
             font-family: Poppins;
             letter-spacing: -4%;
             text-align: center;
-            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, unset)
+            @include headingFonts($text-color, 20px, 500, 112.00000000000001%, unset);
+
+            @include md {
+                font-size: 16px;
+            }
         }
     }
 
     &__text {
-        width: 994px;
+        z-index: 2;
+        padding: 0 50px;
         margin-bottom: 32px;
         font-family: Poltawski Nowy;
         letter-spacing: -2%;
         text-align: center;
-
         @include headingFonts($text-color, 56px, 500, 112.00000000000001%, capitalize);
 
         @include defaultMediaQuery(1135px) {
             font-size: 48px;
         }
+
+        @include lg {
+            font-size: 44px;
+        }
+
+        @include md {
+            font-size: 40px;
+        }
+
+        @include sm {
+            font-size: 38px;
+            margin-bottom: 24px;
+        }
     }
 
     &__sub-text {
+        z-index: 2;
         margin-bottom: 64px;
-        width: 906px;
+        padding: 0 70px;
         font-family: SF Pro Display;
         letter-spacing: 0%;
         text-align: center;
         @include headingFonts($text-color, 20px, 400, 156%, unset);
+
+        @include defaultMediaQuery(1135px) {
+            font-size: 18px;
+        }
+
+        @include md {
+            font-size: 16px;
+        }
+
+        @include sm {
+            font-size: 14px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
     }
 
     &__register-btn {
@@ -97,6 +139,21 @@ body.sidebar-open {
 
         &:hover {
             color: $regester-bg-color;
+        }
+
+        @include defaultMediaQuery(1135px) {
+            font-size: 20px;
+            padding: 22px 76px;
+        }
+
+        @include lg {
+            font-size: 18px;
+            padding: 18px 66px;
+        }
+
+        @include md {
+            font-size: 16px;
+            padding: 12px 48px;
         }
     }
 }
@@ -121,6 +178,10 @@ body.sidebar-open {
         right: 0;
         opacity: 1;
 
+        @include sm {
+            width: 387px;
+            height: 348px;
+        }
     }
 
     &-font1 {
@@ -131,6 +192,25 @@ body.sidebar-open {
         right: 0;
         opacity: 1;
 
+        @include defaultMediaQuery(1135px) {
+            width: 987px;
+            height: 848px;
+        }
+
+        @include lg {
+            width: 887px;
+            height: 748px;
+        }
+
+        @include lg {
+            width: 787px;
+            height: 648px;
+        }
+
+        @include sm {
+            width: 587px;
+            height: 448px;
+        }
     }
 
     &-color2 {
@@ -141,6 +221,10 @@ body.sidebar-open {
         left: 0;
         opacity: 1;
 
+        @include sm {
+            width: 487px;
+            height: 348px;
+        }
     }
 
     &-font2 {
@@ -150,6 +234,21 @@ body.sidebar-open {
         bottom: 0;
         left: 0;
         opacity: 1;
+
+        @include defaultMediaQuery(1135px) {
+            width: 1687px;
+            height: 848px;
+        }
+
+        @include lg {
+            width: 987px;
+            height: 748px;
+        }
+
+        @include lg {
+            width: 887px;
+            height: 648px;
+        }
     }
 }
 
@@ -164,22 +263,40 @@ body.sidebar-open {
 
     // *** CONTENT ***
     &__content {
-        // margin-bottom: 72px;
         border-radius: 32px;
         padding: 32px;
         box-shadow: 0px 0px 20px 0px #0129700F;
         @include flexLayout(flex, space-between, center, 32px, row nowrap);
 
+        @include defaultMediaQuery(1135px) {
+            flex-direction: column;
+        }
+
+        @include md {
+            padding: 24px
+        }
+
         &-info {
             @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
             width: 49%;
 
+            @include defaultMediaQuery(1135px) {
+                width: 100%;
+            }
+
             &-title {
-                // z-index: 999;
                 font-family: Poltawski Nowy;
                 letter-spacing: -2%;
-                width: 560px;
                 @include headingFonts($black-text, 40px, 500, 112.00000000000001%, capitalize);
+
+                @include md {
+                    font-size: 32px;
+                }
+
+                @include defaultMediaQuery(360px) {
+                    font-size: 12px;
+                    text-align: center;
+                }
             }
 
             &-text {
@@ -187,11 +304,23 @@ body.sidebar-open {
                 letter-spacing: -2%;
                 @include headingFonts($p-text, 16px, 400, 156%, unset);
 
+                @include md {
+                    font-size: 14px;
+                }
+
+                @include defaultMediaQuery(360px) {
+                    font-size: 12px;
+                    text-align: center;
+                }
             }
         }
 
         &-cards {
-            @include flexLayout(flex, space-between, center, 0, row nowrap)
+            @include flexLayout(flex, space-between, center, 0, row nowrap);
+
+            @include sm {
+                @include flexLayout(flex, space-between, center, 0, column nowrap)
+            }
         }
 
         &-card {
@@ -202,24 +331,44 @@ body.sidebar-open {
             padding: 20px;
             width: 33.4%;
 
+            @include md {
+                width: 100%;
+            }
+
+            @include sm {
+                max-height: 200px;
+                min-height: 200px;
+            }
+
             &-title {
                 font-family: Poltawski Nowy;
                 letter-spacing: -2%;
-                @include headingFonts($black-text, 40px, 500, 112.00000000000001%, unset)
+                @include headingFonts($black-text, 40px, 500, 112.00000000000001%, unset);
+
+                @include md {
+                    font-size: 34px;
+                }
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
                 margin-top: 32px;
-                @include headingFonts($lang-btn, 14px 500, 132%, unset);
-            }
+                @include headingFonts($lang-btn, 14px, 500, 132%, unset);
 
+                @include md {
+                    margin-top: 20px;
+                }
+            }
         }
 
 
         &-image {
             width: 49%;
+
+            @include defaultMediaQuery(1135px) {
+                width: 100%;
+            }
         }
 
         &-img {
@@ -240,6 +389,23 @@ body.sidebar-open {
             font-family: Poltawski Nowy;
             letter-spacing: -2%;
             @include headingFonts($black-text, 56px, 500, 112.00000000000001%, capitalize);
+
+            @include lg {
+                font-size: 46px;
+            }
+
+            @include md {
+                font-size: 40px;
+            }
+
+            @include sm {
+                font-size: 32px;
+            }
+
+            @include defaultMediaQuery(411px) {
+                text-align: center;
+                width: 100%;
+            }
         }
 
         &-btn {
@@ -252,38 +418,34 @@ body.sidebar-open {
             &:hover {
                 background-color: $lang-btn;
             }
+
+            @include lg {
+                font-size: 16px;
+            }
+
+            @include md {
+                font-size: 14px;
+            }
+
+            @include sm {
+                font-size: 12px;
+            }
+
+            @include defaultMediaQuery(411px) {
+                display: none;
+            }
         }
 
         &-cards {
             margin-bottom: 12px;
             @include gridLayout(grid, 4, 12px);
 
-        }
-
-        &-card {
-            background-color: $partners-card-bg;
-            padding: 24px;
-            border-radius: 32px;
-            height: 280px;
-
-            &-image {
-                background-color: $text-color;
-                height: 72px;
-                width: 72px;
-                border-radius: 14px;
-                margin-bottom: 32px;
-                @include flexLayout(flex, center, center, 0, row)
+            @include defaultMediaQuery(1135px) {
+                @include gridLayout(grid, 3, 12px);
             }
 
-            &-img {
-                width: 52px;
-                height: 52px;
-            }
-
-            &-text {
-                font-family: Poppins;
-                letter-spacing: -4%;
-                @include headingFonts($p-text, 18px, 500, 132%, unset)
+            @include md {
+                @include flexLayout(flex, space-between, center, 12px, row wrap);
             }
         }
     }
@@ -300,6 +462,23 @@ body.sidebar-open {
                 font-family: Poltawski Nowy;
                 letter-spacing: -2%;
                 @include headingFonts($black-text, 56px, 500, 112.00000000000001%, capitalize);
+
+                @include lg {
+                    font-size: 46px;
+                }
+
+                @include md {
+                    font-size: 40px;
+                }
+
+                @include sm {
+                    font-size: 32px;
+                }
+
+                @include defaultMediaQuery(411px) {
+                    text-align: center;
+                    width: 100%;
+                }
             }
 
             &-btn {
@@ -312,12 +491,40 @@ body.sidebar-open {
                 &:hover {
                     background-color: $lang-btn;
                 }
+
+                @include lg {
+                    font-size: 16px;
+                }
+
+                @include md {
+                    font-size: 14px;
+                }
+
+                @include sm {
+                    font-size: 12px;
+                }
+
+                @include defaultMediaQuery(411px) {
+                    display: none;
+                }
             }
         }
 
         &-cards {
             margin-bottom: 40px;
             @include gridLayout(grid, 4, 40px 16px);
+
+            @include lg {
+                @include gridLayout(grid, 3, 30px 14px);
+            }
+
+            @include md {
+                @include gridLayout(grid, 2, 30px 14px);
+            }
+
+            @include defaultMediaQuery(411px) {
+                @include gridLayout(grid, 1, 30px 14px);
+            }
         }
 
         &-card {
@@ -348,12 +555,21 @@ body.sidebar-open {
                 letter-spacing: -4%;
                 margin: 24px 0;
                 @include headingFonts($black-text, 24px, 600, 128%, capitalize);
+
+                @include sm {
+                    margin: 14px 0;
+                    font-size: 20px;
+                }
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
                 @include headingFonts($p-text, 14px, 400, 156%, capitalize);
+
+                @include sm {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -375,11 +591,29 @@ body.sidebar-open {
             letter-spacing: -2%;
             text-align: center;
             margin-bottom: 48px;
-            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize)
+            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize);
+
+            @include md {
+                font-size: 38px;
+            }
+
+            @include sm {
+                font-size: 36px;
+            }
         }
 
         &-boxes {
-            @include gridLayout(grid, 3, 0)
+            @include gridLayout(grid, 3, 0);
+
+            @include lg {
+                @include gridLayout(grid, 2, 0);
+
+            }
+
+            @include md {
+                @include gridLayout(grid, 1, 0);
+
+            }
         }
 
         &-box {
@@ -389,25 +623,28 @@ body.sidebar-open {
             border-radius: 40px;
             @include flexLayout(flex, flex-start, flex-start, 32px, column nowrap);
 
+            @include lg {
+                @include flexLayout(flex, flex-start, flex-start, 20px, column nowrap);
+            }
 
             &-icon {
                 width: 72px;
                 height: 72px;
                 background-color: $lang-btn;
                 border-radius: 16px;
-                @include flexLayout(flex, center, center, 0, row nowrap)
+                @include flexLayout(flex, center, center, 0, row nowrap);
             }
 
             &-title {
                 font-family: Poppins;
                 letter-spacing: -4%;
-                @include headingFonts($p-text, 32px, 500, 128%, capitalize)
+                @include headingFonts($p-text, 32px, 500, 128%, capitalize);
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
-                @include headingFonts($p-text, 15px, 400, 156%, unset)
+                @include headingFonts($p-text, 15px, 400, 156%, unset);
             }
         }
     }
@@ -418,37 +655,105 @@ body.sidebar-open {
             font-family: Poltawski Nowy;
             letter-spacing: -2%;
             margin-bottom: 24px;
-            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize)
+            @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize);
+
+            @include md {
+                font-size: 38px;
+            }
+
+            @include sm {
+                font-size: 36px;
+            }
         }
 
         &-text {
             font-family: Poppins;
             letter-spacing: -2%;
             margin-bottom: 56px;
-            @include headingFonts($text-color, 18px, 400, 132%, unset)
+            @include headingFonts($text-color, 18px, 400, 132%, unset);
+
+            @include md {
+                font-size: 16px;
+            }
+
+            @include sm {
+                font-size: 12px;
+            }
         }
 
-
         &-cards {
-            @include gridLayout(grid, 2, 16px)
+            @include gridLayout(grid, 2, 16px);
+
+            @include md {
+                @include gridLayout(grid, 1, 16px);
+            }
         }
 
         &-card {
             position: relative;
-            padding: 32px 150px 32px 32px;
+            padding: 32px;
             border-radius: 32px;
             border: 1px solid #FFFFFF3D;
             @include flexLayout(flex, flex-start, flex-start, 28px, column nowrap);
 
+            @include md {
+                gap: 20px;
+            }
+
             &-title {
                 font-family: Poppins;
                 letter-spacing: -2%;
-                @include headingFonts($text-color, 28px, 500, 108%, none)
+                margin-right: 80px;
+                @include headingFonts($text-color, 28px, 500, 108%, none);
+
+                @include defaultMediaQuery(1135px) {
+                    font-size: 26px;
+                }
+
+                @include lg {
+                    font-size: 24px;
+                    margin-right: 70px;
+                }
+
+                @include md {
+                    font-size: 22px;
+                }
+
+                @include sm {
+                    margin-top: 40px;
+                    font-size: 20px;
+                }
+
+                @include defaultMediaQuery(410px) {
+                    font-size: 16px;
+                }
+            }
+
+            &-texts {
+                @include flexLayout(flex, flex-start, flex-start, 5px, column nowrap);
             }
 
             &-text {
                 font-family: Poppins;
-                @include headingFonts($text-color, 15px, 400, 132%, none)
+                @include headingFonts($text-color, 15px, 400, 132%, none);
+
+                @include lg {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                @include md {
+                    font-size: 13px;
+                }
+
+                @include sm {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+
+                @include defaultMediaQuery(410px) {
+                    font-size: 10px;
+                }
             }
 
 
@@ -459,6 +764,11 @@ body.sidebar-open {
                 position: absolute;
                 letter-spacing: -2%;
                 @include headingFonts($regester-bg-color, 32px, 500, 108%, none);
+
+                @include sm {
+                    font-size: 28px;
+                    left: 32px;
+                }
             }
         }
 
@@ -473,6 +783,21 @@ body.sidebar-open {
             &:hover {
                 background-color: $text-color;
                 color: $regester-bg-color;
+            }
+
+            @include defaultMediaQuery(1135px) {
+                font-size: 20px;
+                padding: 22px 76px;
+            }
+
+            @include lg {
+                font-size: 18px;
+                padding: 18px 66px;
+            }
+
+            @include md {
+                font-size: 16px;
+                padding: 14px 58px;
             }
         }
 
@@ -490,12 +815,28 @@ body.sidebar-open {
             font-family: Poltawski Nowy;
             letter-spacing: -2%;
             @include headingFonts($text-color, 48px, 500, 112.00000000000001%, capitalize);
+
+            @include lg {
+                font-size: 44px;
+            }
+
+            @include lg {
+                font-size: 38px;
+            }
         }
 
         &-slider {
             overflow: hidden;
             white-space: nowrap;
             margin: 100px 0;
+
+            @include lg {
+                margin: 80px 0;
+            }
+
+            @include md {
+                margin: 60px 0;
+            }
 
             &-track {
                 display: inline-block;
@@ -512,6 +853,18 @@ body.sidebar-open {
             border-radius: 24px;
             margin-right: 12px;
             background-color: $text-color;
+
+            @include lg {
+                width: 220px;
+                height: 110px;
+                margin-right: 8px;
+            }
+
+            @include md {
+                width: 200px;
+                height: 100px;
+                margin-right: 5px;
+            }
         }
     }
 }
@@ -542,25 +895,63 @@ body.sidebar-open {
             letter-spacing: -2%;
             margin-bottom: 56px;
             @include headingFonts($black-text, 48px, 500, 112.00000000000001%, capitalize);
+
+            @include lg {
+                font-size: 44px;
+            }
+
+            @include defaultMediaQuery(411px) {
+                font-size: 38px;
+                text-align: center;
+            }
         }
 
         &-cards {
             width: 100%;
             margin-bottom: 80px;
-            @include flexLayout(flex, space-between, center, 12px, row nowrap)
+            @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+            @include md {
+                @include flexLayout(flex, space-between, center, 12px, column nowrap);
+            }
         }
 
         &-card {
             width: 100%;
-            height: 300px;
+            max-height: 300px;
+            min-height: 300px;
             padding: 40px 50px;
             border-radius: 32px;
             background-color: $partners-card-bg;
             @include flexLayout(flex, flex-start, center, 0, column nowrap);
 
+            @include xl {
+                padding: 40px 30px;
+            }
+
+            @include md {
+                padding: 40px 50px;
+            }
+
+            @include defaultMediaQuery(420px) {
+                max-height: 330px;
+                min-height: 330px;
+                padding: 30px 30px;
+            }
+
             &-img {
                 width: 64px;
                 height: 64px;
+
+                @include lg {
+                    width: 54px;
+                    height: 54px;
+                }
+
+                @include md {
+                    width: 64px;
+                    height: 64px;
+                }
             }
 
             &-icon {
@@ -568,13 +959,26 @@ body.sidebar-open {
                 background-color: $text-color;
                 border-radius: 16px;
                 margin-bottom: 32px;
+                @include flexLayout(flex, center, center, 0, row nowrap);
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -4%;
                 text-align: center;
-                @include headingFonts($p-text, 20px, 500, 132%, none)
+                @include headingFonts($p-text, 18px, 500, 132%, none);
+
+                @include defaultMediaQuery(1135px) {
+                    font-size: 16px;
+                }
+
+                @include lg {
+                    font-size: 15px;
+                }
+
+                @include md {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -588,21 +992,52 @@ body.sidebar-open {
                 letter-spacing: -2%;
                 margin-bottom: 40px;
                 margin-top: 54px;
-                @include headingFonts($p-text, 32px, 500, 112.00000000000001%, none)
+                @include headingFonts($p-text, 32px, 500, 112.00000000000001%, none);
+
+                @include lg {
+                    font-size: 30px;
+                }
+                @include sm {
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
             }
 
             &-double {
                 // margin-bottom: 54px;
                 @include flexLayout(flex, space-between, center, 12px, row nowrap);
+            
+                // @include sm {
+                //     flex-direction: column
+                // }
             }
 
             &-wrapper {
                 // margin-bottom: 54px;
                 @include gridLayout(grid, 4, 12px);
+
+                @include md {
+                    @include gridLayout(grid, 2, 12px);
+
+                }
             }
 
             &-swiper {
-                @include flexLayout(flex, space-between, center, 12px, row nowrap)
+                @include flexLayout(flex, space-between, center, 12px, row nowrap);
+
+
+            }
+        }
+
+        &-swiper-box {
+            width: 240px;
+            height: 128px;
+            border-radius: 24px;
+            background-color: $box-bg-color;
+
+            @include lg {
+                width: 200px;
+                height: 110px;
             }
         }
 
@@ -611,6 +1046,20 @@ body.sidebar-open {
             height: 128px;
             border-radius: 24px;
             background-color: $box-bg-color;
+
+            @include lg {
+                width: 180px;
+                height: 110px;
+            }
+
+            @include md {
+                width: 240px;
+                height: 128px;
+            }
+            @include sm {
+                width: 160px;
+                height: 96px;
+            }
         }
     }
 

@@ -37,95 +37,93 @@
         }
     }
 
-    &-content{
+    &-content {
         display: none;
 
-        &.active{
+        &.active {
             display: block;
         }
 
         &__cards {
-        margin-bottom: 12px;
-        @include gridLayout(grid, 4, 12px);
-
-    }
-
-    // ** COMPANIES **
-    &__companies {
-        &-cards {
             margin-bottom: 12px;
             @include gridLayout(grid, 4, 12px);
+
         }
 
-        &-card {
-            min-height: 168px;
-            border-radius: 24px;
-            border: 1px solid $passes-btn;
-
-            &-img {
-                border-radius: 24px;
-                // object-fit: cover;
-            }
-        }
-    }
-
-
-    //  ** SPEAKERS **
-    &__speakers {
-        &-cards {
-            // margin-bottom: 16px;
-            display: flex;
-            gap: 16px;
-            align-items: stretch;
-            // @include flexLayout(flex, space-between, stretch, 16px, row nowrap);
-            // @include gridLayout(grid, 4,16px);
-        }
-
-        &-card {
-            // flex: 1;
-
-            background-color: #fff;
-
-            @include flexLayout(flex, flex-start, flex-start, 0, column nowrap);
-
-            &-img {
-                // min-height: 340px;
-                width: 300px;
-                // object-fit: cover;
+        // ** COMPANIES **
+        &__companies {
+            &-cards {
+                margin-bottom: 12px;
+                @include gridLayout(grid, 4, 12px);
             }
 
-            &-user {
-                // flex: 1;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                width: 300px;
-                padding: 24px 16px;
+            &-card {
+                min-height: 168px;
                 border-radius: 24px;
                 border: 1px solid $passes-btn;
 
-                &-name {
-                    font-family: Poppins;
-                    letter-spacing: -4%;
-                    @include headingFonts($black-text, 24px, 500, 128%, capitalize)
-                }
-
-                &-position {
-                    font-family: Poppins;
-                    letter-spacing: -2%;
-                    // padding: 16px 0;
-                    margin-bottom: 24px;
-                    border-bottom: 1px solid #A8BACB;
-                    @include headingFonts($regester-bg-color, 14px, 500, 132%, inset)
-                }
-
-                &-info {
-                    font-family: Poppins;
-                    letter-spacing: -2%;
-                    @include headingFonts($p-text, 14px, 400, 156%, none)
+                &-img {
+                    border-radius: 24px;
                 }
             }
         }
-    }
+
+
+        //  ** SPEAKERS **
+        &__speakers {
+            &-cards {
+                // margin-bottom: 16px;
+                display: flex;
+                gap: 16px;
+                align-items: stretch;
+                // @include flexLayout(flex, space-between, stretch, 16px, row nowrap);
+                // @include gridLayout(grid, 4,16px);
+            }
+
+            &-card {
+
+                background-color: #fff;
+
+                @include flexLayout(flex, flex-start, flex-start, 0, column nowrap);
+
+                &-img {
+                    // min-height: 340px;
+                    width: 300px;
+                    // object-fit: cover;
+                }
+
+                &-user {
+                    // flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 300px;
+                    padding: 24px 16px;
+                    border-radius: 24px;
+                    border: 1px solid $passes-btn;
+
+                    &-name {
+                        font-family: Poppins;
+                        letter-spacing: -4%;
+                        @include headingFonts($black-text, 24px, 500, 128%, capitalize)
+                    }
+
+                    &-position {
+                        font-family: Poppins;
+                        letter-spacing: -2%;
+                        // padding: 16px 0;
+                        margin-bottom: 24px;
+                        border-bottom: 1px solid #A8BACB;
+                        @include headingFonts($regester-bg-color, 14px, 500, 132%, inset)
+                    }
+
+                    &-info {
+                        font-family: Poppins;
+                        letter-spacing: -2%;
+                        @include headingFonts($p-text, 14px, 400, 156%, none)
+                    }
+                }
+            }
+        }
     }
 }

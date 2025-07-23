@@ -128,3 +128,35 @@ function hideSidebar() {
     sidebar.classList.remove('active');
     document.body.style.overflow = ''; // scrollni tiklash (default holatga)
 }
+
+
+
+// *** BOX REMOVE
+const breakpoints = [1024, 900, 768, 600, 480]; // Qaysi o'lchamlarda qaysi div o'chiriladi
+const swiper = document.querySelector('.organizers__content-boxes-swiper');
+
+function removeBoxesByWidth() {
+    const boxes = swiper.querySelectorAll('.organizers__content-swiper-box');
+    const screenWidth = window.innerWidth;
+
+    // Nechta divni olib tashlash kerakligini aniqlaymiz
+    let removeCount = 1;
+    for (let i = 0; i < breakpoints.length; i++) {
+        if (screenWidth <= breakpoints[i]) {
+            removeCount++;
+        }
+    }
+
+    // Faqat chapdan boshlab olib tashlaymiz
+    for (let i = 0; i < removeCount; i++) {
+        if (boxes[i]) {
+            boxes[i].remove();
+        }
+    }
+}
+
+// Yuklanishda va oyna o‘lchami o‘zgarganda ishlaydi
+window.addEventListener('load', removeBoxesByWidth);
+window.addEventListener('resize', () => {
+    location.reload(); // Oyna o‘zgarishi bilan sahifani yangilab qayta hisoblaydi
+});

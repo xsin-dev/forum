@@ -39,6 +39,10 @@
             background-color: $text-color;
             border: 1px solid $text-color;
         }
+
+        @include defaultMediaQuery(411px){
+            font-size: 17px;
+        }
     }
 
     &__register {
@@ -84,6 +88,10 @@
 
         @include defaultMediaQuery(1135px) {
             display: block;
+        }
+        @include defaultMediaQuery(411px) {
+            // display: block;
+            
         }
     }
 

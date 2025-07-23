@@ -10,6 +10,11 @@
         z-index: 99999999;
         width: 48px;
         height: 48px;
+
+        @include defaultMediaQuery(411px){
+            width: 36px;
+            height: 36px;
+        }
     }
 
     &-text {
@@ -17,7 +22,14 @@
         width: 300px;
         font-family: Poppins;
         letter-spacing: -2%;
+        @include headingFonts($text-color, 16px, 500, 128%, capitalize);
 
-        @include headingFonts($text-color, 16px, 500, 128%, capitalize)
+        @include sm{
+            font-size: 14px;
+        }
+        @include defaultMediaQuery(411px){
+            font-size: 12px;
+            width: 145px;
+        }
     }
 }

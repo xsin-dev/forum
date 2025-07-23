@@ -5,11 +5,23 @@
     overflow: hidden;
     position: relative;
     background-color: $partners-card-bg;
-    // background-color: rebeccapurple;
     padding: 24px;
     border-radius: 32px;
     height: 280px;
-    // z-index: 99;
+
+    @include md {
+        width: 48%;
+        height: 250px;
+    }
+    @include defaultMediaQuery(411px){
+        width: 100%;
+    }
+
+    &:last-child {
+        @include md {
+            width: 100%;
+        }
+    }
 
     &__image {
         background-color: $text-color;
@@ -30,15 +42,24 @@
         z-index: 99;
         font-family: Poppins;
         letter-spacing: -4%;
-        @include headingFonts($p-text, 18px, 500, 132%, unset)
+        @include headingFonts($p-text, 18px, 500, 132%, unset);
+
+        @include lg {
+            font-size: 16px;
+        }
+
+        @include md {
+            font-size: 14px;
+        }
     }
 
     // BACKGROUND
-    &__background{
+    &__background {
         position: absolute;
         right: 0;
         bottom: -5px;
-        &-img{
+
+        &-img {
             object-fit: cover;
         }
     }
