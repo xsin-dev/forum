@@ -2,40 +2,30 @@
 @use '../../base/variables' as *;
 
 .footer {
-    background: linear-gradient(0deg, #0C4132, #0C4132),
-        linear-gradient(245.62deg, #025140 35.45%, #141414 205.86%);
+    background: linear-gradient(200.69deg, #025140 21.31%, #141414 135.21%);
     border-top-left-radius: 72px;
     border-top-right-radius: 72px;
 
+    &__primary {
+        display: block;
+
+        @include lg {
+            display: none;
+        }
+    }
+
     &__navbar {
-        border-bottom: 1px solid $text-color;
+        border-bottom: 1px solid #ffffff40;
     }
 
 
     &__content {
         padding: 45px 0;
         @include flexLayout(flex, space-between, center, 0, row nowrap);
-
-        @include md {
-            position: relative;
-        }
-
-        @include sm {
-            font-size: 13px;
-            padding: 12px;
-        }
     }
 
     &__phone {
-        margin-left: 20px;
         @include flexLayout(flex, flex-start, center, 12px, row nowrap);
-
-        @include md {
-            position: absolute;
-            margin-top: 250px;
-            left: -20px;
-
-        }
 
         &-icon {
             width: 25px;
@@ -55,12 +45,19 @@
                 letter-spacing: -2%;
                 @include headingFonts($regester-bg-color, 18px, 500, 108%, none);
 
+                @include sm {
+                    font-size: 12px;
+                }
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
                 @include headingFonts($text-color, 18px, 500, 108%, none);
+
+                @include sm {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -69,25 +66,14 @@
         padding: 32px 0 50px 0;
         @include flexLayout(flex, space-between, center, 0, row nowrap);
 
-        @include md {
-            margin-top: 30px;
-            // margin-bottom: ;
-        }
-
         &-year {
             font-family: Poppins;
             letter-spacing: 0%;
             opacity: .7;
             @include headingFonts($text-color, 16px, 400, 128%, none);
 
-            @include md {
-                position: absolute;
-                bottom: -30px;
-                font-size: 14px;
-            }
-
             @include sm {
-                font-size: 13px
+                font-size: 12px;
             }
         }
     }
@@ -104,16 +90,109 @@
         &-info {
             @include flexLayout(flex, space-between, center, 5px, row wrap);
 
+            @include md {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             &-title {
                 font-family: Poppins;
                 letter-spacing: -2%;
                 @include headingFonts($regester-bg-color, 18px, 500, 108%, none);
+
+                @include sm {
+                    font-size: 12px;
+                }
             }
 
             &-text {
                 font-family: Poppins;
                 letter-spacing: -2%;
                 @include headingFonts($text-color, 18px, 500, 108%, none);
+
+                @include sm {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// *** FOOTER SECONDARY ***
+.footer__secondary {
+    display: none;
+
+    @include lg {
+        display: block;
+    }
+
+    &-content {
+        padding: 48px 0;
+        @include flexLayout(flex, flex-start, flex-start, 48px, column nowrap);
+
+        @include md {
+            gap: 38px;
+            padding: 38px 0;
+        }
+    }
+
+    &-logo {
+        border-bottom: 1px solid #ffffff40;
+        padding: 38px 0;
+
+        @include sm {
+            padding: 30px 0;
+        }
+    }
+}
+
+.footer-nav {
+    z-index: 9;
+
+    &__list {
+        @include flexLayout(flex, flex-start, center, 56px, row nowrap)
+    }
+
+    &__item {
+        position: relative;
+        transition: transform 350ms ease;
+
+        &:hover {
+            color: $regester-bg-color;
+            transform: scale(1.1);
+        }
+
+        &-link {
+            font-family: Poppins;
+            letter-spacing: -2%;
+            text-align: center;
+            transition: transform 350ms ease;
+            @include headingFonts($text-color, 18px, 400, 112.00000000000001%, capitalize);
+
+            @include md {
+                font-size: 16px;
+            }
+            @include sm {
+                font-size: 14px;
+            }
+        }
+
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            bottom: -7px;
+            transition: width 150ms linear;
+            background-color: $regester-bg-color;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
             }
         }
     }

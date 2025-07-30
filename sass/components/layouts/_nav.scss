@@ -3,9 +3,13 @@
 
 .nav {
     z-index: 9;
-
+    margin: 0 20px;
     &__list {
-        @include flexLayout(flex, space-between, center, 56px, row nowrap)
+        @include flexLayout(flex, flex-start, center, 56px, row nowrap);
+
+        @include lg{
+            gap: 48px;
+        }
     }
 
     &__item {
@@ -24,14 +28,7 @@
             text-align: center;
             transition: transform 350ms ease;
             @include headingFonts($text-color, 18px, 400, 112.00000000000001%, capitalize);
-
-            // &:hover{
-            // color: $regester-bg-color;
-            // transition: transform 350ms ease;
-            // }
         }
-
-
 
         &::after {
             content: '';
@@ -49,28 +46,9 @@
                 width: 100%;
             }
         }
-
-        // &::before{
-        //     content: '';
-        //     position: absolute;
-        //     height: 3px;
-        //     background-color: $regester-bg-color;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: -8px;
-        //     transform: scaleY(0);
-        //     transition: .3s;
-        //     transform-origin: bottom;
-        // }
-        // &:hover{
-        //     &::before{
-        //         transform: scaleY(1);
-        //     }
-        // }
-
     }
 
-    @include defaultMediaQuery(1135px) {
+    @include defaultMediaQuery(990px) {
         display: none;
     }
 }

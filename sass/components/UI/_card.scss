@@ -7,15 +7,20 @@
     background-color: $partners-card-bg;
     padding: 24px;
     border-radius: 32px;
-    height: 280px;
+    height: 100%;
+    // height: auto;
 
     @include md {
         width: 48%;
-        height: 250px;
+        min-height: 250px;
     }
-    @include defaultMediaQuery(411px){
+    @include sm{
         width: 100%;
+        min-height: auto;
     }
+    // @include defaultMediaQuery(411px){
+    //     width: 100%;
+    // }
 
     &:last-child {
         @include md {

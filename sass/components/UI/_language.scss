@@ -1,0 +1,28 @@
+@use '../../base/mixins' as *;
+@use '../../base/variables' as *;
+
+.lang-swicher {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-drop-down {
+    position: absolute;
+    // display: none;
+    top: 55px;
+}
+
+.lang-btn {
+    font-family: Poppins;
+    letter-spacing: -2%;
+    text-align: center;
+    // position: absolute;
+    @include headingFonts($text-color, 22px, 500, 112.00000000000001%, uppercase);
+    @include Button($lang-btn, 1px solid $lang-btn, 14px, 12px 16px);
+
+    &:hover {
+        color: black;
+        background-color: $text-color;
+        border: 1px solid $text-color;
+    }
+}

@@ -17,7 +17,7 @@ tabButtons.forEach(button => {
     });
 });
 
-// PARTICIPANTS TAB
+// ***** PARTICIPANTS TAB *****
 const participantsBtn = document.querySelectorAll('.participants__button');
 const participantsContent = document.querySelectorAll('.participants-content');
 
@@ -38,7 +38,7 @@ participantsBtn.forEach(button => {
     });
 });
 
-// MEDIA CONTENT TAB
+// ***** MEDIA CONTENT FIRST TAB ***** 
 const mediaContentBtn = document.querySelectorAll('.media__button');
 const mediaContentInfo = document.querySelectorAll('.media-content-tab');
 
@@ -58,7 +58,47 @@ mediaContentBtn.forEach(button => {
 
     });
 });
-// MEDIA CONTENT WRAPPER TAB
+// ***** MEDIA CONTENT SECOND TAB ***** 
+const mediaContentSecondBtn = document.querySelectorAll('.media__button');
+const mediaContentSecondInfo = document.querySelectorAll('.media-content-tab');
+
+mediaContentSecondBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        mediaContentSecondBtn.forEach(btn => btn.classList.remove('active'));
+        mediaContentSecondInfo.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active')
+
+        const tabId = button.getAttribute('data-tab');
+        const activeContent = document.getElementById(tabId)
+        console.log("Tab bosildi:", tabId);
+        if (activeContent) {
+            activeContent.classList.add('active');
+        }
+
+    });
+});
+// ***** MEDIA CONTENT THIRD TAB *****
+const mediaContentThirdBtn = document.querySelectorAll('.media__button');
+const mediaContentThirdInfo = document.querySelectorAll('.media-content-tab');
+
+mediaContentThirdBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        mediaContentThirdBtn.forEach(btn => btn.classList.remove('active'));
+        mediaContentThirdInfo.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active')
+
+        const tabId = button.getAttribute('data-tab');
+        const activeContent = document.getElementById(tabId)
+        console.log("Tab bosildi:", tabId);
+        if (activeContent) {
+            activeContent.classList.add('active');
+        }
+
+    });
+});
+// ***** MEDIA CONTENT WRAPPER TAB *****
 const mediaBtn = document.querySelectorAll('.media-content__button');
 const mediaContent = document.querySelectorAll('.media-content__wrapper');
 
@@ -79,7 +119,7 @@ mediaBtn.forEach(button => {
     });
 });
 
-// SCROLL REGISTER
+// ***** SCROLL REGISTER *****
 document.querySelectorAll('.scroll-btn').forEach(button => {
     button.addEventListener('click', () => {
         document.getElementById('registerForm').scrollIntoView({ behavior: 'smooth' });
@@ -87,7 +127,7 @@ document.querySelectorAll('.scroll-btn').forEach(button => {
 });
 
 
-// LANGUAGE CHANGE
+// ***** LANGUAGE CHANGE *****
 const activeLang = document.getElementById('activeLang');
 const secondLang = document.getElementById('secondLang');
 const dropdown = document.getElementById('langDropDown');
@@ -111,8 +151,23 @@ secondLang.addEventListener('click', () => {
     // masalan: changeLanguageTo(activeLang.innerText);
 });
 
+// *** SIDEBAR Language Change ***
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarActiveLang = document.getElementById('sidebarActiveLang');
+    const sidebarSecondLang = document.getElementById('sidebarSecondLang');
+    const SidebarDropdown = document.getElementById('sidebarLangDropDown');
 
+    sidebarActiveLang.addEventListener('click', () => {
+        SidebarDropdown.style.display = SidebarDropdown.style.display === 'none' ? 'block' : 'none';
+    });
 
+    sidebarSecondLang.addEventListener('click', () => {
+        let temp = sidebarActiveLang.innerText;
+        sidebarActiveLang.innerText = sidebarSecondLang.innerText;
+        sidebarSecondLang.innerText = temp;
+        SidebarDropdown.style.display = 'none';
+    });
+});
 
 
 // *** SIDEBAR ***

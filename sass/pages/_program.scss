@@ -1,0 +1,125 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.program-hero {
+    height: 368px;
+    @include flexLayout(flex, center, center, 0, column nowrap);
+
+    &__title {
+        font-family: Poltawski Nowy;
+        letter-spacing: -2%;
+        text-align: center;
+        @include headingFonts($text-color, 64px, 500, 112.00000000000001%, capitalize);
+    
+        @include lg{
+            font-size: 60px;
+        }
+        @include md{
+            font-size: 54px;
+        }
+        @include md{
+            font-size: 44px;
+        }
+        @include defaultMediaQuery(360px){
+            font-size: 40px;
+        }
+    }
+}
+.program {
+    overflow: hidden;
+    padding: 40px 0;
+    border-radius: 72px;
+    background-color: $text-color;
+    &-cards {
+        @include gridLayout(grid, 2, 16px);
+
+        @include md {
+            @include gridLayout(grid, 1, 16px);
+        }
+    }
+
+    &-card {
+        position: relative;
+        padding: 32px;
+        border-radius: 32px;
+        border: 1px solid #1C2E3F1F;
+        
+        @include flexLayout(flex, flex-start, flex-start, 28px, column nowrap);
+
+        @include md {
+            gap: 20px;
+        }
+
+        &-title {
+            font-family: Poppins;
+            letter-spacing: -2%;
+            margin-right: 80px;
+            @include headingFonts($p-text, 28px, 500, 108%, none);
+
+            @include defaultMediaQuery(1135px) {
+                font-size: 26px;
+            }
+
+            @include lg {
+                font-size: 24px;
+                margin-right: 70px;
+            }
+
+            @include md {
+                font-size: 22px;
+            }
+
+            @include sm {
+                margin-top: 40px;
+                font-size: 20px;
+            }
+
+            @include defaultMediaQuery(410px) {
+                font-size: 16px;
+            }
+        }
+
+        &-texts {
+            @include flexLayout(flex, flex-start, flex-start, 5px, column nowrap);
+        }
+
+        &-text {
+            font-family: Poppins;
+            opacity: 60%;
+            @include headingFonts($p-text, 15px, 400, 132%, none);
+
+            @include lg {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            @include md {
+                font-size: 13px;
+            }
+
+            @include sm {
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            @include defaultMediaQuery(410px) {
+                font-size: 10px;
+            }
+        }
+
+
+        &-number {
+            font-family: Poppins;
+            right: 32px;
+            color: white;
+            position: absolute;
+            letter-spacing: -2%;
+            @include headingFonts($regester-bg-color, 32px, 500, 108%, none);
+
+            @include sm {
+                font-size: 28px;
+                left: 32px;
+            }
+        }
+    }
+}

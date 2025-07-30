@@ -2,14 +2,32 @@
 @use '../../sass/base/variables' as *;
 
 
+.media-hero {
+    height: 368px;
+    @include flexLayout(flex, center, center, 0, column nowrap);
+
+    &__title {
+        font-family: Poltawski Nowy;
+        letter-spacing: -2%;
+        text-align: center;
+        @include headingFonts($text-color, 64px, 500, 112.00000000000001%, capitalize);
+    }
+}
+
 .media {
-    background-color: $text-color;
+    border-radius: 72px;
     padding: 72px 0;
+    overflow: hidden;
+    background-color: $text-color;
 
     &__buttons {
         border-bottom: 1px solid $passes-btn;
         padding: 32px 0;
-        @include flexLayout(flex, center, center, 12px, row nowrap)
+        @include flexLayout(flex, center, center, 12px, row nowrap);
+
+        @include md {
+            flex-direction: column;
+        }
     }
 
     &__button {
@@ -18,6 +36,23 @@
         @include headingFonts($black-text, 22px, 500, 156%, capitalize);
         @include Button($text-color, 1px solid $passes-btn, 14px, 12px 32px);
 
+        @include lg {
+            font-size: 20px;
+        }
+
+        @include md {
+            width: 100%;
+            font-size: 18px;
+        }
+
+        @include sm {
+            font-size: 16px;
+        }
+
+        @include defaultMediaQuery(360px) {
+            font-size: 12px;
+        }
+
         &.active {
             color: $text-color;
             background-color: $regester-bg-color;
@@ -25,7 +60,7 @@
         }
     }
 
-    // CONTENT
+    // *** CONTENT ***
     &-content {
         &-tab {
             display: none;
@@ -37,7 +72,11 @@
 
         &__buttons {
             margin: 32px 0 56px 0;
-            @include flexLayout(flex, center, center, 12px, row nowrap)
+            @include flexLayout(flex, center, center, 12px, row nowrap);
+
+            @include md {
+                flex-direction: column;
+            }
         }
 
         &__button {
@@ -45,6 +84,23 @@
             letter-spacing: -4%;
             @include headingFonts($black-text, 22px, 500, 156%, capitalize);
             @include Button($text-color, 1px solid $passes-btn, 14px, 12px 32px);
+
+            @include lg {
+                font-size: 20px;
+            }
+
+            @include md {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            @include sm {
+                font-size: 16px;
+            }
+
+            @include defaultMediaQuery(360px) {
+                font-size: 12px;
+            }
 
             &.active {
                 color: $text-color;
@@ -64,6 +120,14 @@
         // PHOTOS GALLERY
         &__photos {
             @include gridLayout(grid, 3, 12px);
+
+            @include defaultMediaQuery(991px) {
+                @include gridLayout(grid, 2, 12px);
+            }
+
+            @include sm {
+                @include gridLayout(grid, 1, 12px);
+            }
 
             &-box {
                 position: relative;
@@ -89,13 +153,31 @@
                     @include flexLayout(flex, center, center, 5px, row nowrap);
 
                     &-img {
-                        width: 48px;
-                        height: 48px;
+                        width: 40px;
+                        height: 40px;
+
+                        @include md {
+                            width: 32px;
+                            height: 32px;
+                        }
+
+                        @include sm {
+                            width: 28px;
+                            height: 28px;
+                        }
                     }
 
                     &-text {
                         font-family: Poppins;
-                        @include headingFonts($text-color, 16px, 500, 132%, capitalize)
+                        @include headingFonts($text-color, 14px, 500, 132%, capitalize);
+
+                        @include md {
+                            font-size: 12px;
+                        }
+
+                        @include sm {
+                            font-size: 10px;
+                        }
                     }
                 }
 
@@ -128,6 +210,14 @@
         &__videos {
             @include gridLayout(grid, 3, 12px);
 
+            @include defaultMediaQuery(991px) {
+                @include gridLayout(grid, 2, 12px);
+            }
+
+            @include sm {
+                @include gridLayout(grid, 1, 12px);
+            }
+
             &-box {
                 position: relative;
                 cursor: pointer;
@@ -154,9 +244,23 @@
                     transition: opacity .2s ease-in 0ms; // 100ms kechikish
                     @include flexLayout(flex, center, center, 5px, row nowrap);
 
+                    @include md {
+                        padding: 14px;
+                    }
+
                     &-img {
-                        width: 48px;
-                        height: 48px;
+                        width: 44px;
+                        height: 44px;
+
+                        @include md {
+                            width: 34px;
+                            height: 34px;
+                        }
+
+                        @include sm {
+                            width: 28px;
+                            height: 28px;
+                        }
                     }
                 }
 
@@ -165,6 +269,65 @@
                         opacity: 1;
                     }
                 }
+            }
+        }
+    }
+
+    // ** PAGINATION **
+    &__pagination {
+        padding: 40px 0;
+        @include flexLayout(flex, center, center, 12px, row nowrap);
+
+        &-left-btn {
+            border: 1px solid $passes-btn;
+            padding: 10px;
+            border-radius: 12px;
+            transition: background-color 250ms ease;
+            @include flexLayout(flex, center, center, 0, row nowrap);
+
+            &-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            &:hover {
+                background-color: $box-bg-color;
+            }
+        }
+
+        &-right-btn {
+            border: 1px solid $passes-btn;
+            padding: 10px;
+            border-radius: 12px;
+            transition: background-color 250ms ease;
+            @include flexLayout(flex, center, center, 0, row nowrap);
+
+            &-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            &:hover {
+                background-color: $box-bg-color;
+            }
+        }
+
+        &-numbers {
+            @include flexLayout(flex, space-between, center, 20px, row nowrap);
+        }
+
+        &-number {
+            cursor: pointer;
+            border-radius: 12px;
+            padding: 10px 22px;
+            font-family: Poppins;
+            font-size: 18px;
+            transition: background-color 250ms ease;
+
+
+            &:hover {
+                background-color: $regester-bg-color;
+                color: $text-color;
             }
         }
     }

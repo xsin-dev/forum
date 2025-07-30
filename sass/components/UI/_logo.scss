@@ -2,16 +2,23 @@
 @use '../../base/variables' as *;
 
 .site__logo {
-    // z-index: 9999999999;
     cursor: pointer;
-    @include flexLayout(flex, space-between, center, 11px, row nowrap);
+    @include flexLayout(flex, flex-start, center, 11px, row nowrap);
+
+    @include lg {
+        width: 300px;
+    }
+
+    @include sm {
+        width: 220px;
+    }
 
     &-img {
         z-index: 99999999;
         width: 48px;
         height: 48px;
 
-        @include defaultMediaQuery(411px){
+        @include defaultMediaQuery(411px) {
             width: 36px;
             height: 36px;
         }
@@ -24,10 +31,11 @@
         letter-spacing: -2%;
         @include headingFonts($text-color, 16px, 500, 128%, capitalize);
 
-        @include sm{
+        @include sm {
             font-size: 14px;
         }
-        @include defaultMediaQuery(411px){
+
+        @include defaultMediaQuery(411px) {
             font-size: 12px;
             width: 145px;
         }
